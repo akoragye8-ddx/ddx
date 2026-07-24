@@ -182,16 +182,6 @@
     100%{ transform:scale(1); opacity:0; }
   }
 
-  /* TOAST */
-  .toast{
-    position:fixed; bottom:32px; left:50%; transform:translateX(-50%) translateY(20px);
-    background:var(--navy); color:var(--white); padding:16px 32px; border-radius:12px;
-    font-size:15px; font-weight:600; z-index:9999; opacity:0;
-    transition:opacity .3s ease, transform .3s ease;
-    display:flex; align-items:center; gap:10px;
-  }
-  .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
-
   /* BOOKING FORM */
   .booking{ background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
   .booking-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
@@ -771,17 +761,7 @@ function submitBooking(e) {
   msg += '*Address:* ' + encodeURIComponent(address) + '%0A';
   if (notes) msg += '*Notes:* ' + encodeURIComponent(notes) + '%0A';
 
-  var iframe = document.createElement('iframe');
-  iframe.style.display = 'none';
-  iframe.src = 'https://wa.me/256789015327?text=' + msg;
-  document.body.appendChild(iframe);
-  setTimeout(function() { iframe.remove(); }, 3000);
-
-  f.reset();
-
-  var toast = document.getElementById('toast');
-  toast.classList.add('show');
-  setTimeout(function() { toast.classList.remove('show'); }, 3500);
+  window.open('https://wa.me/256789015327?text=' + msg, '_blank');
 }
 
 (function() {
@@ -828,5 +808,5 @@ document.querySelectorAll('nav a, .nav-cta a, .btn').forEach(function(el) {
 
 </body>
 
-<div class="toast" id="toast">✅ Request sent! We'll confirm via WhatsApp shortly.</div>
+</body>
 </html>
