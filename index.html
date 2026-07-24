@@ -65,6 +65,7 @@
     background:rgba(245,241,231,0.92); backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line);
   }
+  .nav{ position:relative; }
   .nav{
     display:flex; align-items:center; justify-content:space-between;
     padding:18px 32px; max-width:1240px; margin:0 auto;
@@ -174,10 +175,10 @@
   .click-bubble{
     position:fixed; pointer-events:none; z-index:9999;
     border-radius:50%; opacity:0;
-    animation:bubble-pop 0.7s ease-out forwards;
+    animation:bubble-pop 1.2s ease-out forwards;
   }
   @keyframes bubble-pop{
-    0%{ transform:scale(0); opacity:0.7; }
+    0%{ transform:scale(0); opacity:0.8; }
     100%{ transform:scale(1); opacity:0; }
   }
 
@@ -292,7 +293,8 @@
     .hero-grid{ grid-template-columns:1fr; }
     .hero-copy{ margin:0; max-width:none; padding:56px 24px; }
     .hero-copy h1{ font-size:40px; }
-    .nav-links{ display:none; }
+    .nav-links{ display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--line); padding:20px 32px; gap:18px; z-index:40; }
+    .nav-links.open{ display:flex; }
     .menu-toggle{ display:block; }
     .brand{ flex-direction:column; align-items:flex-start; gap:4px; }
     .nav-cta .btn{ padding:12px 18px; font-size:14px; }
@@ -772,20 +774,24 @@ function submitBooking(e) {
   }
 })();
 
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+
 document.querySelectorAll('nav a, .nav-cta a, .btn').forEach(function(el) {
   el.addEventListener('click', function(e) {
     var colors = ['#3452D0','#25D366','#F59E0B','#101B3D','#8FA3F0'];
     for (var i = 0; i < 6; i++) {
       var bubble = document.createElement('div');
       bubble.className = 'click-bubble';
-      var size = Math.random() * 30 + 15;
+      var size = Math.random() * 50 + 30;
       bubble.style.width = size + 'px';
       bubble.style.height = size + 'px';
       bubble.style.left = (e.clientX - size / 2 + (Math.random() - 0.5) * 40) + 'px';
       bubble.style.top = (e.clientY - size / 2 + (Math.random() - 0.5) * 40) + 'px';
       bubble.style.background = colors[Math.floor(Math.random() * colors.length)];
       document.body.appendChild(bubble);
-      (function(b) { setTimeout(function() { b.remove(); }, 750); })(bubble);
+      (function(b) { setTimeout(function() { b.remove(); }, 1300); })(bubble);
     }
   });
 });
