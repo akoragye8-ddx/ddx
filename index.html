@@ -112,6 +112,15 @@
     backdrop-filter:blur(3px);
   }
 
+  /* MARQUEE */
+  .marquee-band{ background:var(--navy); overflow:hidden; padding:16px 0; }
+  .marquee-track{ display:flex; width:max-content; animation:marquee 25s linear infinite; align-items:center; gap:48px; }
+  .marquee-track:hover{ animation-play-state:paused; }
+  .marquee-item{ display:flex; align-items:center; gap:14px; white-space:nowrap; color:var(--white); font-size:15px; font-weight:600; }
+  .marquee-item img{ height:32px; width:auto; border-radius:4px; }
+  .marquee-item .dot{ width:6px; height:6px; border-radius:50%; background:var(--blue); flex-shrink:0; }
+  @keyframes marquee{ 0%{ transform:translateX(0); } 100%{ transform:translateX(-50%); } }
+
   /* SECTION SHARED */
   section{ padding:96px 0; }
   .section-head{ max-width:640px; margin-bottom:56px; }
@@ -242,10 +251,8 @@
 
   /* LOCATIONS */
   .locations{ background:var(--white); border-top:1px solid var(--line); }
-  .loc-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
-  .loc-grid-two{ max-width:1100px; }
-  .loc-map{ border:1px solid var(--line); border-radius:12px; overflow:hidden; min-height:220px; }
-  .loc-map iframe{ width:100%; height:100%; min-height:220px; border:0; display:block; }
+  .loc-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:28px; }
+  .loc-grid-two{ max-width:900px; }
   .loc-card{ border:1px solid var(--line); border-radius:12px; padding:30px; }
   .loc-card h3{ font-size:19px; margin-bottom:10px; }
   .loc-card p{ font-size:14.5px; color:var(--gray); margin-bottom:6px; }
@@ -341,6 +348,23 @@
     </div>
   </div>
 </section>
+
+<div class="marquee-band">
+  <div class="marquee-track">
+    <span class="marquee-item"><img src="images/logo.png" alt="Epitome"></span>
+    <span class="marquee-item"><span class="dot"></span> WhatsApp: +256 789 015327</span>
+    <span class="marquee-item"><span class="dot"></span> Mobile: +256 756 527277</span>
+    <span class="marquee-item"><span class="dot"></span> Free Pickup &amp; Delivery</span>
+    <span class="marquee-item"><span class="dot"></span> Mon – Sat: 8am – 10pm</span>
+    <span class="marquee-item"><span class="dot"></span> Najjera, Kampala</span>
+    <span class="marquee-item"><img src="images/logo.png" alt="Epitome"></span>
+    <span class="marquee-item"><span class="dot"></span> WhatsApp: +256 789 015327</span>
+    <span class="marquee-item"><span class="dot"></span> Mobile: +256 756 527277</span>
+    <span class="marquee-item"><span class="dot"></span> Free Pickup &amp; Delivery</span>
+    <span class="marquee-item"><span class="dot"></span> Mon – Sat: 8am – 10pm</span>
+    <span class="marquee-item"><span class="dot"></span> Najjera, Kampala</span>
+  </div>
+</div>
 
 <section id="services">
   <div class="wrap">
@@ -540,9 +564,6 @@
           </a>
         </div>
       </div>
-      <div class="loc-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7!2d32.6!3d0.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMjEnMDAuMCJTNDDCsDM2JzAwLjAiRQ!5e0!3m2!1sen!2sug!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Epitome Dry Cleaners Najjera location"></iframe>
-      </div>
     </div>
   </div>
 </section>
@@ -570,11 +591,8 @@
           <div class="booking-perk">
             <span class="perk-icon">🌿</span>
             <span>Eco-friendly solvents, gentle on fabrics</span>
-      </div>
-      <div class="loc-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7!2d32.6!3d0.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMjEnMDAuMCJTNDDCsDM2JzAwLjAiRQ!5e0!3m2!1sen!2sug!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Epitome Dry Cleaners Najjera location"></iframe>
-      </div>
-    </div>
+          </div>
+        </div>
       </div>
       <div class="booking-form-card">
         <h3>Book a pickup</h3>
@@ -627,6 +645,7 @@
       <div class="footer-brand">
         <a href="#" class="brand">
           <img src="images/logo.png" alt="Epitome Dry Cleaners logo" style="height:72px; background:var(--white); padding:10px 14px; border-radius:10px;">
+          <div class="tag" style="color:#9AA5C4; font-size:12px;">For Gentility &amp; Convenience</div>
         </a>
         <p>Free pickup and delivery dry cleaning, wash &amp; fold, and rug care — est. 2024.</p>
       </div>
