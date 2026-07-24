@@ -127,22 +127,6 @@
   .service-card h3{ font-size:19px; margin-bottom:8px; }
   .service-card p{ font-size:14.5px; color:var(--gray); }
 
-  /* GALLERY */
-  .gallery-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-  .gallery-item{ position:relative; border-radius:12px; overflow:hidden; aspect-ratio:4/3; cursor:pointer; background:#d9d5c7; }
-  .gallery-item img{ width:100%; height:100%; object-fit:cover; transition:transform .4s ease; }
-  .gallery-item:hover img{ transform:scale(1.06); }
-  .gallery-item .overlay{
-    position:absolute; inset:0; background:linear-gradient(to top, rgba(11,20,48,0.7) 0%, transparent 50%);
-    display:flex; align-items:flex-end; padding:20px; opacity:0; transition:opacity .3s ease;
-  }
-  .gallery-item:hover .overlay{ opacity:1; }
-  .gallery-item .overlay span{ color:var(--white); font-size:14px; font-weight:600; }
-  .gallery-item .placeholder-icon{
-    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-    font-size:40px; opacity:0.4;
-  }
-
   /* LIGHTBOX */
   .lightbox{
     display:none; position:fixed; inset:0; z-index:200;
@@ -275,7 +259,7 @@
     .hero-copy h1{ font-size:40px; }
     .nav-links{ display:none; }
     .menu-toggle{ display:block; }
-    .services-grid, .steps, .pricing-grid, .loc-grid, .gallery-grid{ grid-template-columns:1fr; }
+    .services-grid, .steps, .pricing-grid, .loc-grid{ grid-template-columns:1fr; }
     .booking-grid{ grid-template-columns:1fr; gap:36px; }
     .form-grid{ grid-template-columns:1fr; }
     .form-group.full{ grid-column:auto; }
@@ -283,9 +267,7 @@
     .wrap{ padding:0 20px; }
     .lightbox-nav{ display:none; }
   }
-  @media (min-width:601px) and (max-width:900px){
-    .gallery-grid{ grid-template-columns:repeat(2,1fr); }
-  }
+  
 </style>
 </head>
 <body>
@@ -298,7 +280,6 @@
     </a>
     <nav class="nav-links">
       <a href="#services">Services</a>
-      <a href="#gallery">Gallery</a>
       <a href="#how-it-works">How it works</a>
       <a href="#pricing">Pricing</a>
       <a href="#locations">Locations</a>
@@ -353,72 +334,52 @@
       <p>From everyday shirts to delicate rugs, each item is inspected, cleaned, and finished by hand before it comes back to you.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card">
+      <div class="service-card" onclick="openLightbox(0)">
         <div class="photo"><img src="images/hero-suit.jpg" alt="Dry cleaned suit on a wooden hanger"></div>
         <div class="body">
           <h3>Dry cleaning</h3>
           <p>Suits, dresses, and delicate fabrics cleaned with eco-friendly solvents and pressed to a crisp finish.</p>
         </div>
       </div>
-      <div class="service-card">
+      <div class="service-card" onclick="openLightbox(1)">
         <div class="photo"><img src="images/service-closet.jpg" alt="Neatly folded and organized wardrobe"></div>
         <div class="body">
           <h3>Wash, fold &amp; wardrobe care</h3>
           <p>Everyday laundry washed, folded, and organized so it comes back ready to go straight into your closet.</p>
         </div>
       </div>
-      <div class="service-card">
+      <div class="service-card" onclick="openLightbox(2)">
         <div class="photo"><img src="images/service-rug.jpg" alt="Steam cleaning of a patterned rug"></div>
         <div class="body">
           <h3>Rug &amp; upholstery cleaning</h3>
           <p>Deep steam cleaning that lifts embedded dirt and stains from rugs, carpets, and upholstered furniture.</p>
         </div>
       </div>
+      <div class="service-card" onclick="openLightbox(3)">
+        <div class="photo"><img src="images/hero-bags.jpg" alt="Packaged bedding and duvets"></div>
+        <div class="body">
+          <h3>Bedding &amp; duvet cleaning</h3>
+          <p>Duvets, sheets, and pillowcases refreshed and sanitized for a cleaner, healthier sleep.</p>
+        </div>
+      </div>
+      <div class="service-card" onclick="openLightbox(4)">
+        <div class="photo"><img src="images/service-iron.jpg" alt="Professional pressing and ironing"></div>
+        <div class="body">
+          <h3>Ironing &amp; pressing</h3>
+          <p>Professional pressing that removes every crease — shirts, trousers, and formal wear looking sharp.</p>
+        </div>
+      </div>
+      <div class="service-card" onclick="openLightbox(5)">
+        <div class="photo"><img src="images/service-wedding.jpg" alt="Wedding and formal wear care"></div>
+        <div class="body">
+          <h3>Wedding &amp; formal wear</h3>
+          <p>Gentle handling of gowns, tuxedos, and ceremonial attire with special attention to detail.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="gallery">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Our work</span>
-      <h2>See the Epitome difference</h2>
-      <p>From crisp suits to fresh bedding — here's a look at the quality we deliver every time.</p>
-    </div>
-    <div class="gallery-grid">
-      <div class="gallery-item" onclick="openLightbox(0)">
-        <span class="placeholder-icon">👔</span>
-        <img src="images/gallery-1.jpg" alt="Freshly pressed suit">
-        <div class="overlay"><span>Pressed suit</span></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox(1)">
-        <span class="placeholder-icon">👗</span>
-        <img src="images/gallery-2.jpg" alt="Dry cleaned dress">
-        <div class="overlay"><span>Dry cleaned dress</span></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox(2)">
-        <span class="placeholder-icon">🛏️</span>
-        <img src="images/gallery-3.jpg" alt="Fresh bedding set">
-        <div class="overlay"><span>Bedding set</span></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox(3)">
-        <span class="placeholder-icon">🧶</span>
-        <img src="images/gallery-4.jpg" alt="Rug steam cleaning">
-        <div class="overlay"><span>Rug cleaning</span></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox(4)">
-        <span class="placeholder-icon">👔</span>
-        <img src="images/gallery-5.jpg" alt="Wardrobe organization">
-        <div class="overlay"><span>Wardrobe care</span></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox(5)">
-        <span class="placeholder-icon">📦</span>
-        <img src="images/gallery-6.jpg" alt="Packaged for delivery">
-        <div class="overlay"><span>Packaged for delivery</span></div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
@@ -611,6 +572,8 @@
               <option value="Wash & fold">Wash &amp; fold</option>
               <option value="Rug / upholstery cleaning">Rug / upholstery cleaning</option>
               <option value="Bedding / duvet cleaning">Bedding / duvet cleaning</option>
+              <option value="Ironing & pressing">Ironing &amp; pressing</option>
+              <option value="Wedding & formal wear">Wedding &amp; formal wear</option>
               <option value="Other">Other</option>
             </select>
           </div>
@@ -648,7 +611,6 @@
         <h4>Explore</h4>
         <ul>
           <li><a href="#services">Services</a></li>
-          <li><a href="#gallery">Gallery</a></li>
           <li><a href="#how-it-works">How it works</a></li>
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="#book">Book a pickup</a></li>
@@ -679,12 +641,12 @@
 
 <script>
 var galleryImages = [
-  { src:'images/gallery-1.jpg', alt:'Pressed suit' },
-  { src:'images/gallery-2.jpg', alt:'Dry cleaned dress' },
-  { src:'images/gallery-3.jpg', alt:'Bedding set' },
-  { src:'images/gallery-4.jpg', alt:'Rug cleaning' },
-  { src:'images/gallery-5.jpg', alt:'Wardrobe care' },
-  { src:'images/gallery-6.jpg', alt:'Packaged for delivery' }
+  { src:'images/hero-suit.jpg', alt:'Dry cleaning' },
+  { src:'images/service-closet.jpg', alt:'Wash, fold & wardrobe care' },
+  { src:'images/service-rug.jpg', alt:'Rug & upholstery cleaning' },
+  { src:'images/hero-bags.jpg', alt:'Bedding & duvet cleaning' },
+  { src:'images/service-iron.jpg', alt:'Ironing & pressing' },
+  { src:'images/service-wedding.jpg', alt:'Wedding & formal wear' }
 ];
 var currentSlide = 0;
 
