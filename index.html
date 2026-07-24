@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Epitome Dry Cleaners — For Gentility & Convenience</title>
+<meta name="description" content="Free pickup and delivery dry cleaning, wash & fold, rug cleaning, and ironing in Kampala. Same-day service, eco-friendly solvents, 48-hour turnaround.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -387,42 +388,42 @@
       <p>From everyday shirts to delicate rugs, each item is inspected, cleaned, and finished by hand before it comes back to you.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card" onclick="openLightbox(0)">
+      <div class="service-card" onclick="openLightbox(0)" tabindex="0" role="button" onkeydown="if(event.key==='Enter')openLightbox(0)">
         <div class="photo"><img src="images/hero-suit.jpg" alt="Dry cleaned suit on a wooden hanger"></div>
         <div class="body">
           <h3>Dry cleaning</h3>
           <p>Suits, dresses, and delicate fabrics cleaned with eco-friendly solvents and pressed to a crisp finish.</p>
         </div>
       </div>
-      <div class="service-card" onclick="openLightbox(1)">
+      <div class="service-card" onclick="openLightbox(1)" tabindex="0" role="button" onkeydown="if(event.key==='Enter')openLightbox(1)">
         <div class="photo"><img src="images/service-closet.jpg" alt="Neatly folded and organized wardrobe"></div>
         <div class="body">
           <h3>Wash, fold &amp; wardrobe care</h3>
           <p>Everyday laundry washed, folded, and organized so it comes back ready to go straight into your closet.</p>
         </div>
       </div>
-      <div class="service-card" onclick="openLightbox(2)">
+      <div class="service-card" onclick="openLightbox(2)" tabindex="0" role="button" onkeydown="if(event.key==='Enter')openLightbox(2)">
         <div class="photo"><img src="images/service-rug.jpg" alt="Steam cleaning of a patterned rug"></div>
         <div class="body">
           <h3>Rug &amp; upholstery cleaning</h3>
           <p>Deep steam cleaning that lifts embedded dirt and stains from rugs, carpets, and upholstered furniture.</p>
         </div>
       </div>
-      <div class="service-card" onclick="openLightbox(3)">
+      <div class="service-card" onclick="openLightbox(3)" tabindex="0" role="button" onkeydown="if(event.key==='Enter')openLightbox(3)">
         <div class="photo"><img src="images/hero-bags.jpg" alt="Packaged bedding and duvets"></div>
         <div class="body">
           <h3>Bedding &amp; duvet cleaning</h3>
           <p>Duvets, sheets, and pillowcases refreshed and sanitized for a cleaner, healthier sleep.</p>
         </div>
       </div>
-      <div class="service-card" onclick="openLightbox(4)">
+      <div class="service-card" onclick="openLightbox(4)" tabindex="0" role="button" onkeydown="if(event.key==='Enter')openLightbox(4)">
         <div class="photo"><img src="images/service-iron.jpg" alt="Professional pressing and ironing"></div>
         <div class="body">
           <h3>Ironing &amp; pressing</h3>
           <p>Professional pressing that removes every crease — shirts, trousers, and formal wear looking sharp.</p>
         </div>
       </div>
-      <div class="service-card" onclick="openLightbox(5)">
+      <div class="service-card" onclick="openLightbox(5)" tabindex="0" role="button" onkeydown="if(event.key==='Enter')openLightbox(5)">
         <div class="photo"><img src="images/service-wedding.jpg" alt="Wedding and formal wear care"></div>
         <div class="body">
           <h3>Wedding &amp; formal wear</h3>
@@ -683,7 +684,7 @@
         <h4>Hours</h4>
         <ul>
           <li>Mon – Sat: 8:00am – 10:00pm</li>
-<li>Sunday: 9:00am - 8:00pm</li>
+<li>Sunday: 9:00am – 8:00pm</li>
         </ul>
       </div>
     </div>
@@ -776,6 +777,12 @@ document.querySelector('.menu-toggle').addEventListener('click', function() {
   document.querySelector('.nav-links').classList.toggle('open');
 });
 
+document.querySelectorAll('.nav-links a').forEach(function(el) {
+  el.addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.remove('open');
+  });
+});
+
 document.querySelectorAll('nav a, .nav-cta a, .btn').forEach(function(el) {
   el.addEventListener('click', function(e) {
     var colors = ['#3452D0','#25D366','#F59E0B','#101B3D','#8FA3F0'];
@@ -805,8 +812,6 @@ document.querySelectorAll('nav a, .nav-cta a, .btn').forEach(function(el) {
   }, 1800);
 })();
 </script>
-
-</body>
 
 </body>
 </html>
