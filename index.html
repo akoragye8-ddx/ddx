@@ -99,7 +99,7 @@
     padding:9px 16px; border-radius:6px;
   }
   .hero-photos{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:60px; }
-  .hero-photos figure{ position:relative; border-radius:8px; overflow:hidden; aspect-ratio:3/4; background:#0c1733; }
+  .hero-photos figure{ position:relative; overflow:hidden; aspect-ratio:3/4; }
   .hero-photos img{ width:100%; height:100%; object-fit:cover; }
   .badge-pin{
     position:absolute; top:14px; left:14px; width:38px; height:38px; border-radius:50%;
@@ -190,10 +190,21 @@
   /* HOW IT WORKS */
   .how{ background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
   .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:28px; }
-  .step{ padding:8px; }
-  .step .num{ font-family:'Manrope',sans-serif; font-size:14px; font-weight:800; color:var(--blue); margin-bottom:14px; }
-  .step h3{ font-size:18px; margin-bottom:8px; }
+  .step{
+    padding:28px 24px; border-radius:12px; border-left:4px solid var(--step-color, var(--blue));
+    background:var(--step-bg, #EBF0FF);
+  }
+  .step .num{
+    font-family:'Manrope',sans-serif; font-size:12px; font-weight:800; color:var(--step-color, var(--blue));
+    text-transform:uppercase; letter-spacing:0.06em; margin-bottom:12px;
+    display:inline-block; background:var(--step-num-bg, #D6E0FF); padding:4px 10px; border-radius:4px;
+  }
+  .step h3{ font-size:18px; margin-bottom:8px; color:var(--step-color, var(--blue)); }
   .step p{ font-size:14.5px; color:var(--gray); }
+  .step-blue{ --step-color:#3452D0; --step-bg:#EBF0FF; --step-num-bg:#D6E0FF; }
+  .step-green{ --step-color:#25D366; --step-bg:#E8FAF0; --step-num-bg:#C8F5D8; }
+  .step-orange{ --step-color:#F59E0B; --step-bg:#FEF5E7; --step-num-bg:#FDE8C8; }
+  .step-navy{ --step-color:#101B3D; --step-bg:#E8EBF2; --step-num-bg:#D0D5E4; }
 
   /* PRICING */
   .pricing-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; align-items:stretch; }
@@ -314,11 +325,9 @@
       <span class="est-badge">Est. 2024</span>
       <div class="hero-photos">
         <figure>
-          <span class="badge-pin">🏠</span>
           <img src="images/hero-suit.jpg" alt="Freshly pressed suit on a hanger">
         </figure>
         <figure>
-          <span class="badge-pin">🏠</span>
           <img src="images/hero-bags.jpg" alt="Packaged garments ready for delivery">
         </figure>
       </div>
@@ -396,22 +405,22 @@
       <h2>Four steps, zero counter visits</h2>
     </div>
     <div class="steps">
-      <div class="step">
+      <div class="step step-blue">
         <div class="num">01</div>
         <h3>Schedule</h3>
         <p>Book a pickup window online or send us a WhatsApp message with your address.</p>
       </div>
-      <div class="step">
+      <div class="step step-green">
         <div class="num">02</div>
         <h3>We collect</h3>
         <p>A rider picks up your items at the time you chose — no need to leave home or the office.</p>
       </div>
-      <div class="step">
+      <div class="step step-orange">
         <div class="num">03</div>
         <h3>We clean</h3>
         <p>Each item is sorted, cleaned, and finished by hand within 48 hours.</p>
       </div>
-      <div class="step">
+      <div class="step step-navy">
         <div class="num">04</div>
         <h3>We deliver</h3>
         <p>Fresh, folded, and ready to wear — dropped back at your door.</p>
@@ -603,7 +612,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#" class="brand">
-          <img src="images/logo.png" alt="Epitome Dry Cleaners logo" style="height:52px;">
+          <img src="images/logo.png" alt="Epitome Dry Cleaners logo" style="height:52px; background:var(--white); padding:8px 12px; border-radius:10px;">
         </a>
         <p>Free pickup and delivery dry cleaning, wash &amp; fold, and rug care — est. 2024.</p>
       </div>
