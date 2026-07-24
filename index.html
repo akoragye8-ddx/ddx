@@ -85,7 +85,7 @@
   .hero-grid{
     display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:640px;
   }
-  .hero-copy{ padding:80px 32px 80px 32px; display:flex; flex-direction:column; justify-content:center; max-width:600px; margin-left:auto; }
+  .hero-copy{ padding:40px 32px 80px 32px; display:flex; flex-direction:column; justify-content:center; max-width:600px; margin-left:auto; }
   .hero-copy h1{ font-size:56px; font-weight:800; line-height:1.08; margin:22px 0 24px; }
   .hero-copy h1 em{ font-style:italic; color:var(--blue); font-weight:800; }
   .hero-copy p{ font-size:17px; color:var(--gray); max-width:480px; margin-bottom:34px; }
@@ -215,10 +215,8 @@
   /* HOW IT WORKS */
   .how{ background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
   .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:28px; }
-  .step{
-    padding:28px 24px; border-radius:12px; border-left:4px solid var(--step-color, var(--blue));
-    background:var(--step-bg, #EBF0FF);
-  }
+  .step{ position:relative; padding:28px 24px; border-radius:12px; border-left:4px solid var(--step-color, var(--blue)); background:var(--step-bg, #EBF0FF); transition:box-shadow .3s ease, transform .3s ease; }
+  .step.highlight{ box-shadow:0 0 0 3px var(--step-color, var(--blue)), 0 4px 20px rgba(0,0,0,0.1); transform:translateY(-4px); }
   .step .num{
     font-family:'Manrope',sans-serif; font-size:12px; font-weight:800; color:var(--step-color, var(--blue));
     text-transform:uppercase; letter-spacing:0.06em; margin-bottom:12px;
@@ -370,13 +368,13 @@
     <span class="marquee-item"><span class="dot"></span> WhatsApp: +256 789 015327</span>
     <span class="marquee-item"><span class="dot"></span> Mobile: +256 756 527277</span>
     <span class="marquee-item"><span class="dot"></span> Free Pickup &amp; Delivery</span>
-    <span class="marquee-item"><span class="dot"></span> Mon – Sat: 8am – 10pm</span>
+    <span class="marquee-item"><span class="dot"></span> Mon – Sat: 8am – 10pm | Sun: 9am – 8pm</span>
     <span class="marquee-item"><span class="dot"></span> Najjera, Kampala</span>
     <span class="marquee-item"><img src="images/logo.png" alt="Epitome"></span>
     <span class="marquee-item"><span class="dot"></span> WhatsApp: +256 789 015327</span>
     <span class="marquee-item"><span class="dot"></span> Mobile: +256 756 527277</span>
     <span class="marquee-item"><span class="dot"></span> Free Pickup &amp; Delivery</span>
-    <span class="marquee-item"><span class="dot"></span> Mon – Sat: 8am – 10pm</span>
+    <span class="marquee-item"><span class="dot"></span> Mon – Sat: 8am – 10pm | Sun: 9am – 8pm</span>
     <span class="marquee-item"><span class="dot"></span> Najjera, Kampala</span>
   </div>
 </div>
@@ -795,6 +793,17 @@ document.querySelectorAll('nav a, .nav-cta a, .btn').forEach(function(el) {
     }
   });
 });
+
+(function() {
+  var steps = document.querySelectorAll('.step');
+  if (!steps.length) return;
+  var current = 0;
+  setInterval(function() {
+    steps.forEach(function(s) { s.classList.remove('highlight'); });
+    steps[current].classList.add('highlight');
+    current = (current + 1) % steps.length;
+  }, 1800);
+})();
 </script>
 
 </body>
