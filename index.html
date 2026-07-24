@@ -54,6 +54,10 @@
   .btn-light{ background:var(--white); color:var(--navy); }
   .btn-whatsapp{ background:#25D366; color:var(--white); }
   .btn-whatsapp:hover{ background:#1EBE59; }
+  .whatsapp-icon{ width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#25D366; flex-shrink:0; }
+  .whatsapp-icon svg{ width:18px; height:18px; fill:var(--white); }
+  .whatsapp-icon-sm{ width:28px; height:28px; }
+  .whatsapp-icon-sm svg{ width:14px; height:14px; }
 
   /* HEADER */
   header{
@@ -90,16 +94,16 @@
   .hero-contact .icon{ width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:var(--white); border:1px solid var(--line); font-size:16px; }
 
   .hero-visual{
-    position:relative; background:var(--navy); padding:56px 40px;
-    display:flex; flex-direction:column; justify-content:center; gap:20px;
+    position:relative; background:var(--navy); padding:36px 28px;
+    display:flex; flex-direction:column; justify-content:center; gap:16px;
   }
   .est-badge{
-    position:absolute; top:36px; left:40px;
+    position:absolute; top:24px; left:28px;
     background:var(--cream); color:var(--navy); font-weight:700; font-size:13px;
     padding:9px 16px; border-radius:6px;
   }
-  .hero-photos{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:60px; }
-  .hero-photos figure{ position:relative; overflow:hidden; aspect-ratio:3/4; }
+  .hero-photos{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:44px; }
+  .hero-photos figure{ position:relative; overflow:hidden; aspect-ratio:3/4; max-height:320px; }
   .hero-photos img{ width:100%; height:100%; object-fit:cover; }
   .badge-pin{
     position:absolute; top:14px; left:14px; width:38px; height:38px; border-radius:50%;
@@ -238,8 +242,10 @@
 
   /* LOCATIONS */
   .locations{ background:var(--white); border-top:1px solid var(--line); }
-  .loc-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:28px; }
-  .loc-grid-two{ max-width:900px; }
+  .loc-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+  .loc-grid-two{ max-width:1100px; }
+  .loc-map{ border:1px solid var(--line); border-radius:12px; overflow:hidden; min-height:220px; }
+  .loc-map iframe{ width:100%; height:100%; min-height:220px; border:0; display:block; }
   .loc-card{ border:1px solid var(--line); border-radius:12px; padding:30px; }
   .loc-card h3{ font-size:19px; margin-bottom:10px; }
   .loc-card p{ font-size:14.5px; color:var(--gray); margin-bottom:6px; }
@@ -314,7 +320,8 @@
       </div>
       <div class="hero-contact">
         <a href="https://wa.me/256789015327" target="_blank" rel="noopener">
-          <span class="icon">💬</span> WhatsApp: +256 789 015327
+          <span class="whatsapp-icon"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.522 5.858L.057 23.988l6.247-1.638A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.82c-1.95 0-3.84-.524-5.49-1.514l-.393-.233-3.89 1.018 1.04-3.788-.257-.408A9.78 9.78 0 012.18 12c0-5.42 4.4-9.82 9.82-9.82S21.82 6.58 21.82 12s-4.4 9.82-9.82 9.82z"/></svg></span>
+          WhatsApp: +256 789 015327
         </a>
         <a href="tel:+256756527277">
           <span class="icon">📞</span> Mobile: +256 756 527277
@@ -440,7 +447,7 @@
       <div class="plan">
         <h3>Pay-as-you-go</h3>
         <p class="plan-note">For occasional cleaning, priced per item.</p>
-        <div class="price">From 5,000 <span>UGX/item</span></div>
+        <div class="price">7,000 <span>UGX/kg</span></div>
         <ul>
           <li>No monthly commitment</li>
           <li>Free pickup &amp; delivery</li>
@@ -506,7 +513,8 @@
       <div class="loc-card">
         <h3>Najjera</h3>
         <p>Plot 285 Najjera 1, Busibante Rd, Shop No. C4</p>
-        <p>Mon – Sat: 8:00am – 7:00pm</p>
+        <p>Mon – Sat: 8:00am – 10:00pm</p>
+        <p>Sunday: 9:00am – 8:00pm</p>
         <div class="loc-links">
           <a href="https://wa.me/256789015327" target="_blank" rel="noopener">WhatsApp</a>
           <a href="tel:+256756527277">Call</a>
@@ -517,7 +525,7 @@
         <p>Reach us directly on either line below.</p>
         <div style="margin-top:18px; display:flex; flex-direction:column; gap:14px;">
           <a href="https://wa.me/256789015327" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:12px;">
-            <span class="icon" style="width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--cream);border:1px solid var(--line);font-size:16px;">💬</span>
+            <span class="whatsapp-icon whatsapp-icon-sm"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.522 5.858L.057 23.988l6.247-1.638A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.82c-1.95 0-3.84-.524-5.49-1.514l-.393-.233-3.89 1.018 1.04-3.788-.257-.408A9.78 9.78 0 012.18 12c0-5.42 4.4-9.82 9.82-9.82S21.82 6.58 21.82 12s-4.4 9.82-9.82 9.82z"/></svg></span>
             <span>
               <span style="display:block; font-size:12px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:var(--gray);">WhatsApp</span>
               <span style="display:block; font-size:16px; font-weight:700; color:var(--navy);">+256 789 015327</span>
@@ -531,6 +539,9 @@
             </span>
           </a>
         </div>
+      </div>
+      <div class="loc-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7!2d32.6!3d0.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMjEnMDAuMCJTNDDCsDM2JzAwLjAiRQ!5e0!3m2!1sen!2sug!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Epitome Dry Cleaners Najjera location"></iframe>
       </div>
     </div>
   </div>
@@ -559,8 +570,11 @@
           <div class="booking-perk">
             <span class="perk-icon">🌿</span>
             <span>Eco-friendly solvents, gentle on fabrics</span>
-          </div>
-        </div>
+      </div>
+      <div class="loc-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7!2d32.6!3d0.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMjEnMDAuMCJTNDDCsDM2JzAwLjAiRQ!5e0!3m2!1sen!2sug!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Epitome Dry Cleaners Najjera location"></iframe>
+      </div>
+    </div>
       </div>
       <div class="booking-form-card">
         <h3>Book a pickup</h3>
@@ -612,7 +626,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#" class="brand">
-          <img src="images/logo.png" alt="Epitome Dry Cleaners logo" style="height:52px; background:var(--white); padding:8px 12px; border-radius:10px;">
+          <img src="images/logo.png" alt="Epitome Dry Cleaners logo" style="height:72px; background:var(--white); padding:10px 14px; border-radius:10px;">
         </a>
         <p>Free pickup and delivery dry cleaning, wash &amp; fold, and rug care — est. 2024.</p>
       </div>
