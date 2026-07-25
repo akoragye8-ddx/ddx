@@ -8,13 +8,13 @@
 <link rel="icon" type="image/png" href="images/logo.png">
 <meta property="og:title" content="Epitome Dry Cleaners — For Gentility & Convenience">
 <meta property="og:description" content="Fast pickup and delivery dry cleaning, wash & fold, rug cleaning, and ironing in Kampala. Same-day service, eco-friendly solvents, 48-hour turnaround.">
-<meta property="og:image" content="images/logo.png">
+<meta property="og:image" content="https://epitome-dry-cleaners.web.app/images/logo.png">
 <meta property="og:url" content="https://epitome-dry-cleaners.web.app">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Epitome Dry Cleaners — For Gentility & Convenience">
 <meta name="twitter:description" content="Fast pickup and delivery dry cleaning, wash & fold, rug cleaning, and ironing in Kampala.">
-<meta name="twitter:image" content="images/logo.png">
+<meta name="twitter:image" content="https://epitome-dry-cleaners.web.app/images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
@@ -327,8 +327,43 @@
   }
   
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DryCleaningOrLaundry",
+  "name": "Epitome Dry Cleaners",
+  "image": "https://epitome-dry-cleaners.web.app/images/logo.png",
+  "url": "https://epitome-dry-cleaners.web.app",
+  "telephone": "+256756527277",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Plot 285 Najjera 1, Busibante Rd, Shop No. C4",
+    "addressLocality": "Kampala",
+    "addressCountry": "UG"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "08:00",
+      "closes": "22:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "09:00",
+      "closes": "20:00"
+    }
+  ],
+  "priceRange": "UGX 4,000 - 30,000+"
+}
+</script>
 </head>
 <body>
+
+<a href="#services" class="skip-link">Skip to content</a>
+
+<style>.skip-link{position:absolute;top:-100%;left:16px;background:var(--navy);color:var(--white);padding:12px 24px;border-radius:0 0 8px 8px;font-weight:600;z-index:100;transition:top .2s;}.skip-link:focus{top:0;}</style>
 
 <header>
   <div class="nav">
@@ -383,7 +418,7 @@
   </div>
 </section>
 
-        <div class="marquee-band" onclick="window.open('https://wa.me/256789015327','_blank')">
+        <div class="marquee-band" role="link" tabindex="0" onclick="window.open('https://wa.me/256789015327','_blank')" onkeydown="if(event.key==='Enter')window.open('https://wa.me/256789015327','_blank')">
   <div class="marquee-track">
     <span class="marquee-item"><img src="images/logo.png" alt="Epitome" width="400" height="232" loading="lazy"></span>
     <span class="marquee-item"><span class="dot"></span> WhatsApp: +256 789 015327</span>
@@ -455,11 +490,11 @@
 </section>
 
 
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-  <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#8249;</button>
-  <img id="lightbox-img" src="" alt="">
-  <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#8250;</button>
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Image lightbox" aria-modal="true">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close lightbox">&times;</button>
+  <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)" aria-label="Previous image">&#8249;</button>
+  <img id="lightbox-img" src="" alt="" role="img">
+  <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)" aria-label="Next image">&#8250;</button>
   <div class="lightbox-caption" id="lightbox-caption"></div>
 </div>
 
@@ -820,7 +855,7 @@ document.querySelectorAll('.nav-links a').forEach(function(el) {
 document.querySelectorAll('nav a, .nav-cta a, .btn').forEach(function(el) {
   el.addEventListener('click', function(e) {
     var colors = ['#3452D0','#25D366','#F59E0B','#101B3D','#8FA3F0'];
-    for (var i = 0; i < 6; i++) {
+    for (var i = 0; i < 5; i++) {
       var bubble = document.createElement('div');
       bubble.className = 'click-bubble';
       var size = Math.random() * 50 + 30;
