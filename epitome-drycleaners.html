@@ -6,7 +6,9 @@
 <title>Epitome Dry Cleaners — For Gentility & Convenience</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 <style>
   :root{
     --cream: #F5F1E7;
@@ -210,7 +212,7 @@
 <header>
   <div class="nav">
     <a href="#" class="brand">
-      <img src="images/logo.png" alt="Epitome Dry Cleaners logo">
+      <img src="images/logo.jpg" alt="Epitome Dry Cleaners logo" width="400" height="232">
       <div class="tag">For Gentility &amp; Convenience</div>
     </a>
     <nav class="nav-links">
@@ -250,11 +252,11 @@
       <div class="hero-photos">
         <figure>
           <span class="badge-pin">🏠</span>
-          <img src="images/hero-suit.jpg" alt="Freshly pressed suit on a hanger">
+          <img src="images/hero-suit.jpg" alt="Freshly pressed suit on a hanger" width="800" height="1200">
         </figure>
         <figure>
           <span class="badge-pin">🏠</span>
-          <img src="images/hero-bags.jpg" alt="Packaged garments ready for delivery">
+          <img src="images/hero-bags.jpg" alt="Packaged garments ready for delivery" width="800" height="1200">
         </figure>
       </div>
     </div>
@@ -270,21 +272,21 @@
     </div>
     <div class="services-grid">
       <div class="service-card">
-        <div class="photo"><img src="images/hero-suit.jpg" alt="Dry cleaned suit on a wooden hanger"></div>
+        <div class="photo"><img src="images/hero-suit.jpg" alt="Dry cleaned suit on a wooden hanger" width="800" height="1200" loading="lazy"></div>
         <div class="body">
           <h3>Dry cleaning</h3>
           <p>Suits, dresses, and delicate fabrics cleaned with eco-friendly solvents and pressed to a crisp finish.</p>
         </div>
       </div>
       <div class="service-card">
-        <div class="photo"><img src="images/service-closet.jpg" alt="Neatly folded and organized wardrobe"></div>
+        <div class="photo"><img src="images/service-closet.jpg" alt="Neatly folded and organized wardrobe" width="800" height="600" loading="lazy"></div>
         <div class="body">
           <h3>Wash, fold &amp; wardrobe care</h3>
           <p>Everyday laundry washed, folded, and organized so it comes back ready to go straight into your closet.</p>
         </div>
       </div>
       <div class="service-card">
-        <div class="photo"><img src="images/service-rug.jpg" alt="Steam cleaning of a patterned rug"></div>
+        <div class="photo"><img src="images/service-rug.jpg" alt="Steam cleaning of a patterned rug" width="800" height="600" loading="lazy"></div>
         <div class="body">
           <h3>Rug &amp; upholstery cleaning</h3>
           <p>Deep steam cleaning that lifts embedded dirt and stains from rugs, carpets, and upholstered furniture.</p>
@@ -447,7 +449,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#" class="brand">
-          <img src="images/logo.png" alt="Epitome Dry Cleaners logo" style="height:52px;">
+          <img src="images/logo.jpg" alt="Epitome Dry Cleaners logo" width="400" height="232" loading="lazy" style="height:52px;">
         </a>
         <p>Fast pickup and delivery dry cleaning, wash &amp; fold, and rug care — est. 2024.</p>
       </div>
