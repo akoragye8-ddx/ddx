@@ -97,7 +97,7 @@
   /* HERO */
   .hero{ background:var(--cream); }
   .hero-grid{
-display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:400px;
+display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:400px; aspect-ratio:10/3;
   }
   .hero-copy{ padding:8px 30px 28px 30px; display:flex; flex-direction:column; justify-content:flex-start; max-width:600px; margin-left:auto; }
   .hero-copy h1{ font-size:54px; font-weight:800; line-height:1.08; margin:16px 0 14px; }
@@ -314,7 +314,7 @@ display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:
   .footer-bottom{ border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; display:flex; justify-content:space-between; font-size:13px; color:#8B96BB; flex-wrap:wrap; gap:10px; }
 
   @media (max-width: 900px){
-    .hero-grid{ grid-template-columns:1fr; }
+    .hero-grid{ grid-template-columns:1fr; aspect-ratio:auto; }
     .hero-copy{ margin:0; max-width:none; padding:20px 24px; }
     .hero-copy h1{ font-size:40px; }
     .nav-links{ display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--line); padding:20px 32px; gap:18px; z-index:40; }
