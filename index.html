@@ -239,6 +239,8 @@
   .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:28px; }
   .step{ position:relative; padding:28px 24px; border-radius:12px; border-left:4px solid var(--step-color, var(--blue)); background:var(--step-bg, #EBF0FF); transition:box-shadow .3s ease, transform .3s ease; }
   .step.highlight{ box-shadow:0 0 0 3px var(--step-color, var(--blue)), 0 4px 20px rgba(0,0,0,0.1); transform:translateY(-4px); }
+  .step-icon{ width:46px; height:46px; border-radius:12px; background:var(--step-color, var(--blue)); color:var(--white); display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+  .step-icon svg{ width:24px; height:24px; fill:currentColor; }
   .step .num{
     font-family:'DM Sans',sans-serif; font-size:12px; font-weight:800; color:var(--step-color, var(--blue));
     text-transform:uppercase; letter-spacing:0.06em; margin-bottom:12px;
@@ -508,21 +510,25 @@
     </div>
     <div class="steps">
       <div class="step step-blue">
+        <span class="step-icon"><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 10h5v5H7z"/></svg></span>
         <div class="num">01</div>
         <h3>Schedule</h3>
         <p>Book a pickup window online or send us a WhatsApp message with your address.</p>
       </div>
       <div class="step step-green">
+        <span class="step-icon"><svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm12 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM17 12V9.5h2.5l1.5 2H17z"/></svg></span>
         <div class="num">02</div>
         <h3>We collect</h3>
         <p>A rider picks up your items at the time you chose — no need to leave home or the office.</p>
       </div>
       <div class="step step-orange">
+        <span class="step-icon"><svg viewBox="0 0 24 24"><path d="M7.5 14.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm8-12a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM3.5 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm13.5 10a2.75 2.75 0 1 0 0 5.5 2.75 2.75 0 0 0 0-5.5z"/></svg></span>
         <div class="num">03</div>
         <h3>We clean</h3>
         <p>Each item is sorted, cleaned, and finished by hand within 48 hours.</p>
       </div>
       <div class="step step-navy">
+        <span class="step-icon"><svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg></span>
         <div class="num">04</div>
         <h3>We deliver</h3>
         <p>Fresh, folded, and ready to wear — dropped back at your door.</p>
