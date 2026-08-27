@@ -251,6 +251,9 @@
   .step-blue{ --step-color:#3452D0; --step-bg:#EBF0FF; --step-num-bg:#D6E0FF; }
   .step-green{ --step-color:#25D366; --step-bg:#E8FAF0; --step-num-bg:#C8F5D8; }
   .step-orange{ --step-color:#F59E0B; --step-bg:#FEF5E7; --step-num-bg:#FDE8C8; }
+  .step-sky{ --step-color:#0369A1; --step-bg:#E0F2FE; --step-num-bg:#BAE6FD; }
+  .step-sky .step-icon{ animation:bubblePop 2.4s ease-in-out infinite; }
+  @keyframes bubblePop{ 0%,100%{ transform:scale(1); } 25%{ transform:scale(1.15); } 40%{ transform:scale(0.96); } }
   .step-navy{ --step-color:#101B3D; --step-bg:#E8EBF2; --step-num-bg:#D0D5E4; }
 
   /* PRICING */
@@ -521,7 +524,7 @@
         <h3>We collect</h3>
         <p>A rider picks up your items at the time you chose — no need to leave home or the office.</p>
       </div>
-      <div class="step step-orange">
+      <div class="step step-sky">
         <span class="step-icon"><svg viewBox="0 0 24 24"><path d="M7.5 14.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm8-12a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM3.5 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm13.5 10a2.75 2.75 0 1 0 0 5.5 2.75 2.75 0 0 0 0-5.5z"/></svg></span>
         <div class="num">03</div>
         <h3>We clean</h3>
