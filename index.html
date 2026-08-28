@@ -245,6 +245,9 @@ display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:
     text-transform:uppercase; letter-spacing:0.06em; margin-bottom:12px;
     display:inline-block; background:var(--step-num-bg, #D6E0FF); padding:4px 10px; border-radius:4px;
   }
+  .step-top{ display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+  .step-top .num{ margin-bottom:0; }
+  .step-top .step-icon{ margin-bottom:0; }
   .step h3{ font-size:18px; margin-bottom:8px; color:var(--step-color, var(--blue)); }
   .step p{ font-size:14.5px; color:var(--gray); }
   .step-blue{ --step-color:#3452D0; --step-bg:#EBF0FF; --step-num-bg:#D6E0FF; }
@@ -512,26 +515,34 @@ display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:
     </div>
     <div class="steps">
       <div class="step step-orange">
-        <div class="num">01</div>
-        <span class="step-icon"><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 10h5v5H7z"/></svg></span>
+        <div class="step-top">
+          <div class="num">01</div>
+          <span class="step-icon"><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 10h5v5H7z"/></svg></span>
+        </div>
         <h3>Schedule</h3>
         <p>Book a pickup window online or send us a WhatsApp message with your address.</p>
       </div>
       <div class="step step-green">
-        <div class="num">02</div>
-        <span class="step-icon">🚚</span>
+        <div class="step-top">
+          <div class="num">02</div>
+          <span class="step-icon">🚚</span>
+        </div>
         <h3>We collect</h3>
         <p>A rider picks up your items at the time you chose, no need to leave home or the office.</p>
       </div>
       <div class="step step-sky">
-        <div class="num">03</div>
-        <span class="step-icon"><svg viewBox="0 0 24 24"><path d="M7.5 14.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm8-12a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM3.5 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm13.5 10a2.75 2.75 0 1 0 0 5.5 2.75 2.75 0 0 0 0-5.5z"/></svg></span>
+        <div class="step-top">
+          <div class="num">03</div>
+          <span class="step-icon"><svg viewBox="0 0 24 24"><path d="M7.5 14.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm8-12a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM3.5 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm13.5 10a2.75 2.75 0 1 0 0 5.5 2.75 2.75 0 0 0 0-5.5z"/></svg></span>
+        </div>
         <h3>We clean</h3>
         <p>Each item is sorted, cleaned, steamed and finished by hand within 48 hours.</p>
       </div>
       <div class="step step-navy">
-        <div class="num">04</div>
-        <span class="step-icon">📦</span>
+        <div class="step-top">
+          <div class="num">04</div>
+          <span class="step-icon">📦</span>
+        </div>
         <h3>We deliver</h3>
         <p>Fresh, folded, and ready to wear, dropped back at your door.</p>
       </div>
