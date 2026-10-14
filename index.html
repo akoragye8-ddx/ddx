@@ -4,23 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Epitome Dry Cleaners, For Gentility & Convenience</title>
-<meta name="description" content="Fast pickup and delivery dry cleaning, wash & fold, rug cleaning, and ironing in Kampala. Same-day service, eco-friendly solvents, 48-hour turnaround.">
-<link rel="icon" type="image/png" href="images/logo.png">
+<meta name="description" content="Fast pickup and delivery dry cleaning, wash & fold, rug cleaning, and ironing in Kampala. Eco-friendly solvents and a 48-hour turnaround.">
+<meta name="theme-color" content="#F5F1E7">
+<script>
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('js-reveal');
+  }
+</script>
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <meta property="og:title" content="Epitome Dry Cleaners, For Gentility & Convenience">
-<meta property="og:description" content="Fast pickup and delivery dry cleaning, wash & fold, rug cleaning, and ironing in Kampala. Same-day service, eco-friendly solvents, 48-hour turnaround.">
-<meta property="og:image" content="https://epitomedrycleanersnearme.com/images/logo.png">
+<meta property="og:description" content="Fast pickup and delivery dry cleaning, wash & fold, rug cleaning, and ironing in Kampala. Eco-friendly solvents and a 48-hour turnaround.">
+<meta property="og:image" content="https://epitomedrycleanersnearme.com/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Epitome Dry Cleaners: your clothes, professionally cared for. Pickup and delivery in Kampala.">
 <meta property="og:url" content="https://epitomedrycleanersnearme.com/">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://epitomedrycleanersnearme.com/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Epitome Dry Cleaners, For Gentility & Convenience">
 <meta name="twitter:description" content="Fast pickup and delivery dry cleaning, wash & fold, rug cleaning, and ironing in Kampala.">
-<meta name="twitter:image" content="https://epitomedrycleanersnearme.com/images/logo.png">
+<meta name="twitter:image" content="https://epitomedrycleanersnearme.com/images/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&text=EpitmeDRYCLANS&display=block" rel="stylesheet">
 <style>
   :root{
     --cream: #F5F1E7;
@@ -32,6 +44,9 @@
     --gray: #47505E;
     --line: #E4DFD1;
     --white: #FFFFFF;
+    --whatsapp: #15803D;
+    --whatsapp-deep: #166534;
+    --header-h: 92px;
   }
   *{ margin:0; padding:0; box-sizing:border-box; }
   html{ scroll-behavior:smooth; }
@@ -45,10 +60,19 @@
     font-family:'DM Sans', sans-serif;
     color:var(--navy);
     letter-spacing:-0.02em;
+    line-height:1.15;
+    text-wrap:balance;
   }
   a{ text-decoration:none; color:inherit; }
   ul{ list-style:none; }
   img{ max-width:100%; display:block; }
+  :focus-visible{ outline:3px solid var(--blue); outline-offset:3px; }
+  footer :focus-visible, .plan.featured :focus-visible{ outline-color:var(--white); }
+  section[id]{ scroll-margin-top:calc(var(--header-h) - 32px); }
+  .nowrap{ white-space:nowrap; }
+  .visually-hidden{ position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+  .skip-link{ position:absolute; top:-100%; left:16px; background:var(--navy); color:var(--white); padding:12px 24px; border-radius:0 0 8px 8px; font-weight:600; z-index:100; transition:top .2s; }
+  .skip-link:focus{ top:0; }
   .wrap{ max-width:1240px; margin:0 auto; padding:0 32px; }
   .eyebrow{
     display:inline-flex; align-items:center;
@@ -57,7 +81,7 @@
   }
   .btn{
     display:inline-flex; align-items:center; justify-content:center; gap:8px;
-    padding:15px 28px; border-radius:6px; font-weight:600; font-size:15px;
+    padding:15px 28px; border-radius:6px; font-weight:600; font-size:15px; font-family:inherit;
     cursor:pointer; border:2px solid transparent; transition:transform .15s ease, background .15s ease;
   }
   .btn:hover{ transform:translateY(-1px); }
@@ -66,12 +90,15 @@
   .btn-outline{ background:transparent; color:var(--navy); border-color:var(--navy); }
   .btn-outline:hover{ background:var(--navy); color:var(--white); }
   .btn-light{ background:var(--white); color:var(--navy); }
-  .btn-whatsapp{ background:#15803D; color:var(--white); }
-  .btn-whatsapp:hover{ background:#166534; }
-  .whatsapp-icon{ width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#15803D; flex-shrink:0; }
-  .whatsapp-icon svg{ width:18px; height:18px; fill:var(--white); }
-  .whatsapp-icon-sm{ width:28px; height:28px; }
-  .whatsapp-icon-sm svg{ width:14px; height:14px; }
+  .btn-light:hover{ background:var(--cream); }
+  .btn-whatsapp{ background:var(--whatsapp); color:var(--white); }
+  .btn-whatsapp:hover{ background:var(--whatsapp-deep); }
+  .contact-icon{
+    width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    background:var(--white); border:1px solid var(--line); color:var(--navy);
+  }
+  .contact-icon svg{ width:18px; height:18px; fill:currentColor; }
+  .contact-icon.whatsapp{ background:var(--whatsapp); border-color:var(--whatsapp); color:var(--white); }
 
   /* HEADER */
   header{
@@ -79,69 +106,84 @@
     background:rgba(245,241,231,0.92); backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line);
   }
-  .nav{ position:relative; }
   .nav{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:18px 32px; max-width:1240px; margin:0 auto;
+    position:relative; display:flex; align-items:center; justify-content:space-between; gap:36px;
+    padding:14px 32px; max-width:1240px; margin:0 auto;
   }
   .brand{ display:flex; align-items:center; gap:14px; }
   .brand img{ height:64px; width:auto; object-fit:contain; }
-  .brand .name{ font-size:19px; font-weight:800; color:var(--navy); line-height:1.1; }
   .brand .tag{ font-size:11px; font-weight:700; letter-spacing:0.08em; color:var(--gray); text-transform:uppercase; }
-  .nav-links{ display:flex; align-items:center; gap:36px; }
+  .nav-links{ display:flex; align-items:center; gap:36px; margin-left:auto; }
   .nav-links a{ font-size:15px; font-weight:500; color:var(--ink); }
   .nav-links a:hover{ color:var(--blue); }
   .nav-cta{ display:flex; align-items:center; gap:14px; }
-  .menu-toggle{ display:none; background:none; border:none; font-size:26px; color:var(--navy); cursor:pointer; }
-
-  /* HERO */
-  .hero{ background:var(--cream); padding:0; }
-  .hero-grid{
-display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:400px; aspect-ratio:10/3;
+  .nav-cta .btn{ white-space:nowrap; }
+  .menu-toggle{
+    display:none; width:44px; height:44px; align-items:center; justify-content:center;
+    background:none; border:none; border-radius:8px; color:var(--navy); cursor:pointer;
   }
-  .hero-copy{ padding:8px 30px 28px 30px; display:flex; flex-direction:column; justify-content:flex-start; max-width:600px; margin-left:auto; }
-  .hero-copy h1{ font-size:54px; font-weight:800; line-height:1.08; margin:16px 0 14px; }
-  .hero-copy p{ font-size:17px; color:var(--gray); max-width:480px; margin-bottom:20px; }
-  .hero-actions{ display:flex; gap:16px; margin-bottom:20px; flex-wrap:wrap; }
-  .hero-contact{ display:flex; gap:24px; padding-top:16px; border-top:1px solid var(--line); flex-wrap:wrap; }
-  .hero-contact a{ display:flex; align-items:center; gap:10px; font-size:14px; font-weight:600; color:var(--navy); }
-  .hero-contact .icon{ width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:var(--white); border:1px solid var(--line); font-size:16px; }
+  .menu-toggle svg{ width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; }
+  .menu-toggle .icon-close, .menu-toggle[aria-expanded="true"] .icon-open{ display:none; }
+  .menu-toggle[aria-expanded="true"] .icon-close{ display:block; }
 
+  /* HERO
+     The suit photo is the backdrop on the right. Its near-black background matches
+     --hero-bg, so the photo's edges disappear while it swings and turns.
+     The section is taller than the stage (by --hero-pin); the stage sticks under the
+     header while that extra height scrolls past, and the suit turns during it. */
+  .hero{
+    --hero-bg:#010908;
+    --hero-h:max(560px, calc(100svh - var(--header-h)));
+    --hero-pin:70svh;
+    position:relative; padding:0; height:calc(var(--hero-h) + var(--hero-pin));
+    background:var(--hero-bg); color:var(--white);
+  }
+  .hero-stage{
+    position:sticky; top:var(--header-h); height:var(--hero-h); overflow:hidden;
+    display:flex; align-items:center;
+  }
+  .hero-stage::before{
+    content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:linear-gradient(90deg, var(--hero-bg) 30%, rgba(1,9,8,0) 62%);
+  }
+  .hero :focus-visible{ outline-color:var(--white); }
   .hero-visual{
-    position:relative; background:var(--navy); padding:0;
-    display:flex; flex-direction:column; justify-content:center; gap:0;
+    position:absolute; top:0; right:max(0px, calc((100vw - 1240px) / 2 - 24px));
+    height:112%; aspect-ratio:2/3;
   }
-  .est-badge{
-    position:absolute; top:16px; left:20px; z-index:2;
-    background:var(--cream); color:var(--navy); font-weight:700; font-size:13px;
-    padding:9px 16px; border-radius:6px;
+  .hero-hanger, .suit-turn{ position:absolute; inset:0; transform-origin:53% 0; }
+  .hero-hanger.swinging{ animation:hang-swing 4.2s ease-in-out both; }
+  .suit-turn{
+    will-change:transform;
+    -webkit-mask-image:linear-gradient(90deg, transparent 0, #000 16%, #000 84%, transparent 100%);
+    mask-image:linear-gradient(90deg, transparent 0, #000 16%, #000 84%, transparent 100%);
   }
-  .hero-photos{ display:grid; grid-template-columns:1fr 1fr; gap:14px; height:100%; }
-  .hero-photos figure{ position:relative; overflow:hidden; height:100%; }
-  .hero-photos img{ width:100%; height:100%; object-fit:cover; }
-  .badge-pin{
-    position:absolute; top:14px; left:14px; width:38px; height:38px; border-radius:50%;
-    background:rgba(16,27,61,0.55); border:1px solid rgba(255,255,255,0.35);
-    display:flex; align-items:center; justify-content:center; color:var(--white); font-size:16px;
-    backdrop-filter:blur(3px);
+  .suit-turn img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:53% 0; }
+  .suit-turn .suit-back, .suit-turn.show-back .suit-front{ opacity:0; }
+  .suit-turn.show-back .suit-back{ opacity:1; }
+  .suit-shade{ position:absolute; inset:0; background:var(--hero-bg); opacity:0; }
+  @keyframes hang-swing{
+    0%{ transform:translateY(-14px) rotate(5deg); }
+    12%{ transform:translateY(0) rotate(-4deg); }
+    25%{ transform:rotate(3deg); }
+    38%{ transform:rotate(-2.1deg); }
+    51%{ transform:rotate(1.4deg); }
+    64%{ transform:rotate(-0.8deg); }
+    77%{ transform:rotate(0.4deg); }
+    89%{ transform:rotate(-0.15deg); }
+    100%{ transform:rotate(0); }
   }
-
-  /* MARQUEE */
-  .marquee-band{ background:#1a2d5e; overflow:hidden; padding:48px 0; position:relative; cursor:pointer; }
-  .marquee-track{ display:flex; width:max-content; animation:marquee 25s linear infinite; align-items:center; gap:48px; }
-  .marquee-track:hover{ animation-play-state:paused; }
-  .marquee-item{ display:flex; align-items:center; gap:14px; white-space:nowrap; color:var(--white); font-size:15px; font-weight:600; }
-  .marquee-item img{ height:44px; width:auto; border-radius:4px; background:var(--white); padding:4px 8px; }
-  .marquee-item .dot{ width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,0.4); flex-shrink:0; }
-  .marquee-bubble{
-    position:absolute; bottom:0; border-radius:50%; background:rgba(255,255,255,0.15);
-    animation:marquee-bubble-rise linear forwards; pointer-events:none;
+  .hero-copy{
+    position:relative; z-index:2; width:100%; max-width:1240px; margin:0 auto; padding:72px 32px;
+    pointer-events:none;
   }
-  @keyframes marquee-bubble-rise{
-    0%{ transform:translateY(0) scale(1); opacity:0.6; }
-    100%{ transform:translateY(-200px) scale(0.3); opacity:0; }
-  }
-  @keyframes marquee{ 0%{ transform:translateX(0); } 100%{ transform:translateX(-50%); } }
+  .hero-copy > *{ pointer-events:auto; }
+  .hero-wordmark{ margin-bottom:28px; }
+  .hero-wordmark svg{ display:block; width:clamp(300px, 34vw, 480px); height:auto; }
+  .hero-copy p{ font-size:18px; color:rgba(255,255,255,0.8); max-width:460px; margin-bottom:32px; }
+  .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; }
+  .hero .btn-outline{ color:var(--white); border-color:rgba(255,255,255,0.8); }
+  .hero .btn-outline:hover{ background:var(--white); border-color:var(--white); color:var(--navy); }
 
   /* SECTION SHARED */
   section{ padding:96px 0; }
@@ -153,11 +195,11 @@ display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:
   .services-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:28px; }
   .service-card{
     background:var(--white); border:1px solid var(--line); border-radius:12px; overflow:hidden;
-    display:flex; flex-direction:column;
+    display:flex; flex-direction:column; cursor:pointer;
   }
   .service-card .photo{ aspect-ratio:4/3; overflow:hidden; }
   .service-card .photo img{ width:100%; height:100%; object-fit:cover; transition:transform .4s ease; }
-  .service-card:hover .photo img{ transform:scale(1.06); }
+  .service-card:hover .photo img, .service-card:focus-visible .photo img{ transform:scale(1.06); }
   .service-card .body{ padding:26px 24px 30px; }
   .service-card h3{ font-size:19px; margin-bottom:8px; }
   .service-card p{ font-size:14.5px; color:var(--gray); }
@@ -169,7 +211,7 @@ display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:
     align-items:center; justify-content:center; padding:32px;
   }
   .lightbox.active{ display:flex; }
-  .lightbox img{ max-width:90%; max-height:85vh; border-radius:10px; box-shadow:0 20px 60px rgba(0,0,0,0.4); }
+  .lightbox img{ max-width:90%; max-height:80vh; border-radius:10px; box-shadow:0 20px 60px rgba(0,0,0,0.4); }
   .lightbox-close{
     position:absolute; top:24px; right:32px;
     background:none; border:none; color:var(--white); font-size:32px; cursor:pointer;
@@ -191,6 +233,7 @@ display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:
   .lightbox-nav:hover{ background:rgba(255,255,255,0.15); }
   .lightbox-prev{ left:20px; }
   .lightbox-next{ right:20px; }
+  .lightbox :focus-visible{ outline-color:var(--white); }
 
   /* CLICK BUBBLES */
   .click-bubble{
@@ -228,41 +271,83 @@ display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:
     background:var(--white); transition:border-color .2s;
   }
   .form-group input:focus, .form-group select:focus, .form-group textarea:focus{
-    outline:none; border-color:var(--blue);
+    outline:2px solid var(--blue); outline-offset:0; border-color:var(--blue);
   }
   .form-group textarea{ resize:vertical; min-height:80px; }
   .form-submit{ grid-column:1/-1; margin-top:8px; }
+  .form-submit .btn{ width:100%; }
+  .form-status{ grid-column:1/-1; font-size:14px; color:var(--gray); }
+  .form-status:empty{ display:none; }
 
-  /* HOW IT WORKS */
+  /* HOW IT WORKS: dark progress cards (one per step, highlighted in turn) */
   .how{ background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-  .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:28px; }
-  .step{ position:relative; padding:28px 24px; border-radius:12px; border-left:4px solid var(--step-color, var(--blue)); background:var(--step-bg, #EBF0FF); transition:box-shadow .3s ease, transform .3s ease; }
-  .step.highlight{ box-shadow:0 0 0 3px var(--step-color, var(--blue)), 0 4px 20px rgba(0,0,0,0.1); transform:translateY(-4px); }
-  .step-icon{ width:46px; height:46px; border-radius:12px; background:var(--step-color, var(--blue)); color:var(--white); display:flex; align-items:center; justify-content:center; margin-bottom:14px; font-size:24px; line-height:1; }
-  .step-icon svg{ width:24px; height:24px; fill:currentColor; }
-  .step .num{
-    font-family:'DM Sans',sans-serif; font-size:12px; font-weight:800; color:var(--step-color, var(--blue));
-    text-transform:uppercase; letter-spacing:0.06em; margin-bottom:12px;
-    display:inline-block; background:var(--step-num-bg, #D6E0FF); padding:4px 10px; border-radius:4px;
+  .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+  .step{
+    --step-color:#1890ff; --step-text:#1890ff;
+    position:relative; display:flex; flex-direction:column; overflow:hidden;
+    background:#232228; color:#DDDDDD; border-radius:18px;
+    box-shadow:0 10px 30px rgba(21,20,25,0.18);
+    transition:box-shadow .3s ease, transform .3s ease;
   }
-  .step-top{ display:flex; align-items:center; gap:12px; margin-bottom:14px; }
-  .step-top .num{ margin-bottom:0; }
-  .step-top .step-icon{ margin-bottom:0; }
-  .step h3{ font-size:18px; margin-bottom:8px; color:var(--step-color, var(--blue)); }
-  .step p{ font-size:14.5px; color:var(--gray); }
-  .step-blue{ --step-color:#3452D0; --step-bg:#EBF0FF; --step-num-bg:#D6E0FF; }
-  .step-green{ --step-color:#25D366; --step-bg:#E8FAF0; --step-num-bg:#C8F5D8; }
-  .step-orange{ --step-color:#F59E0B; --step-bg:#FEF5E7; --step-num-bg:#FDE8C8; }
-  .step-sky{ --step-color:#0369A1; --step-bg:#E0F2FE; --step-num-bg:#BAE6FD; }
-  .step-sky .step-icon{ animation:bubblePop 2.4s ease-in-out infinite; }
-  @keyframes bubblePop{ 0%,100%{ transform:scale(1); } 25%{ transform:scale(1.15); } 40%{ transform:scale(0.96); } }
-  .step-navy{ --step-color:#101B3D; --step-bg:#E8EBF2; --step-num-bg:#D0D5E4; }
+  .step.highlight, .step:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 0 2px var(--step-color), 0 20px 40px rgba(21,20,25,0.32);
+  }
+  .step-orange{ --step-color:#ffb741; --step-text:#ffb741; }
+  .step-green{ --step-color:#01c3a8; --step-text:#01c3a8; }
+  .step-blue{ --step-color:#1890ff; --step-text:#4DA8FF; }
+  .step-red{ --step-color:#a63d2a; --step-text:#E8735C; }
+  .step-header{ display:flex; align-items:center; justify-content:space-between; padding:22px 24px 0; }
+  .step-label{ font-size:13px; font-weight:600; color:#9A99A6; letter-spacing:0.02em; }
+  .step-icon{ display:flex; color:var(--step-text); }
+  .step-icon svg{ width:24px; height:24px; fill:currentColor; }
+  .step-body{ flex:1; padding:18px 24px 24px; }
+  .step h3{ font-size:22px; margin-bottom:6px; color:var(--white); text-transform:capitalize; }
+  .step p{ font-size:14.5px; color:#B9B8C2; margin-bottom:22px; }
+  .step-progress{ display:flex; align-items:center; gap:12px; font-size:13px; font-weight:600; color:#DDDDDD; }
+  .step-progress-bar{ position:relative; flex:1; height:6px; border-radius:6px; background:#363636; overflow:hidden; }
+  .step-progress-bar::after{
+    content:""; position:absolute; inset:0 auto 0 0; width:var(--progress); border-radius:inherit;
+    background:var(--step-color);
+  }
+  .step-footer{
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    padding:14px 24px; background:#151419;
+  }
+  .step-thumbs{ display:flex; align-items:center; }
+  .step-thumbs li + li{ margin-left:-10px; }
+  .step-thumbs img, .step-add{
+    width:36px; height:36px; border-radius:50%; border:2px solid #151419; object-fit:cover;
+  }
+  .step-add{
+    display:flex; align-items:center; justify-content:center;
+    background:#292929; color:#DDDDDD; transition:background .2s ease, color .2s ease;
+  }
+  .step-add:hover{ background:var(--step-color); color:#151419; }
+  .step-add svg{ width:18px; height:18px; fill:currentColor; }
+  .step-time{
+    font-size:13px; font-weight:700; white-space:nowrap; color:var(--step-text);
+    background:color-mix(in srgb, var(--step-color) 14%, #151419); padding:8px 12px; border-radius:8px;
+  }
+  .js-reveal .step.is-visible .step-progress-bar::after{
+    animation:progress-fill 1.1s cubic-bezier(.2,.7,.2,1) both;
+    animation-delay:calc(var(--reveal-delay, 0ms) + 300ms);
+  }
+  @keyframes progress-fill{ from{ width:0; } }
 
   /* PRICING */
   .pricing-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; align-items:stretch; }
   .plan{
     background:var(--white); border:1px solid var(--line); border-radius:14px; padding:36px 30px;
     display:flex; flex-direction:column;
+    transition:transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease;
+  }
+  /* Lift on hover, keyboard focus, or tap (.is-raised is set by script on touch). */
+  .plan:hover, .plan:focus-within, .plan.is-raised{
+    transform:translateY(-10px); box-shadow:0 24px 48px rgba(16,27,61,0.16);
+  }
+  .plan.featured:hover, .plan.featured:focus-within, .plan.featured.is-raised{
+    box-shadow:0 24px 48px rgba(52,82,208,0.38);
   }
   .plan.featured{ background:var(--blue); border-color:var(--blue); color:var(--white); position:relative; }
   .plan.featured h3, .plan.featured .price{ color:var(--white); }
@@ -282,9 +367,11 @@ display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:
   .plan.featured li::before{ color:#DCE3FF; }
 
   .price-table{ margin-top:64px; }
+  .price-table h3{ font-size:20px; margin-bottom:16px; }
   .price-table table{ width:100%; border-collapse:collapse; background:var(--white); border-radius:12px; overflow:hidden; border:1px solid var(--line); }
   .price-table th, .price-table td{ text-align:left; padding:16px 22px; font-size:14.5px; }
   .price-table th{ background:var(--navy); color:var(--white); font-weight:600; font-size:13px; letter-spacing:0.03em; text-transform:uppercase; }
+  .price-table th.amount{ text-align:right; }
   .price-table tr:not(:last-child) td{ border-bottom:1px solid var(--line); }
   .price-table td.amount{ font-weight:700; color:var(--navy); text-align:right; }
 
@@ -295,45 +382,100 @@ display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:
   .loc-card{ border:1px solid var(--line); border-radius:12px; padding:30px; }
   .loc-card h3{ font-size:19px; margin-bottom:10px; }
   .loc-card p{ font-size:14.5px; color:var(--gray); margin-bottom:6px; }
-  .loc-card .loc-links{ display:flex; gap:14px; margin-top:18px; flex-wrap:wrap; }
-  .loc-card .loc-links a{ font-size:14px; font-weight:600; color:var(--blue); }
-
-  /* CTA BAND */
-  .cta-band{ background:var(--navy); color:var(--white); text-align:center; padding:88px 32px; }
-  .cta-band h2{ color:var(--white); font-size:34px; margin-bottom:16px; }
-  .cta-band p{ color:#C9D0E5; margin-bottom:32px; max-width:520px; margin-left:auto; margin-right:auto; }
-  .cta-actions{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+  .loc-card .loc-links{ display:flex; gap:0 20px; margin-top:8px; flex-wrap:wrap; }
+  .loc-card .loc-links a{ display:inline-flex; align-items:center; min-height:44px; font-size:14px; font-weight:600; color:var(--blue); }
+  .loc-card .loc-links a:hover{ text-decoration:underline; }
+  .contact-list{ margin-top:18px; display:flex; flex-direction:column; gap:14px; }
+  .contact-list a{ display:flex; align-items:center; gap:12px; }
+  .contact-list .contact-icon{ background:var(--cream); }
+  .contact-list .contact-icon.whatsapp{ background:var(--whatsapp); }
+  .contact-list .label{ display:block; font-size:12px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:var(--gray); }
+  .contact-list .value{ display:block; font-size:16px; font-weight:700; color:var(--navy); }
 
   /* FOOTER */
   footer{ background:var(--navy-deep); color:#C9D0E5; padding:64px 0 28px; }
   .footer-grid{ display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr; gap:40px; margin-bottom:48px; }
-  .footer-brand .brand{ margin-bottom:14px; }
-  .footer-brand .brand .name{ color:var(--white); }
+  .footer-brand .brand{ flex-direction:column; align-items:flex-start; gap:12px; margin-bottom:14px; }
+  .footer-brand .brand img{ height:72px; background:var(--white); padding:10px 14px; border-radius:10px; }
+  .footer-brand .brand .tag{ color:#9AA5C4; font-size:12px; }
   .footer-brand p{ font-size:14px; color:#9AA5C4; max-width:280px; }
   footer h4{ color:var(--white); font-size:14px; margin-bottom:18px; letter-spacing:0.03em; text-transform:uppercase; }
-  footer ul li{ margin-bottom:11px; }
+  footer ul li{ margin-bottom:11px; font-size:14.5px; }
   footer ul li a{ font-size:14.5px; color:#C9D0E5; }
   footer ul li a:hover{ color:var(--white); }
   .footer-bottom{ border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; display:flex; justify-content:space-between; font-size:13px; color:#8B96BB; flex-wrap:wrap; gap:10px; }
 
+  /* SCROLL REVEAL
+     The script adds .js-reveal to <html> (not for reduced motion) and .reveal to content
+     blocks, then toggles .is-visible each time a block enters or fully leaves the screen,
+     so the entrance replays on every pass. It animates `translate` rather than `transform`
+     so it doesn't fight the hover/highlight lifts on cards. */
+  .js-reveal .reveal{ opacity:0; }
+  .js-reveal .reveal.is-visible{
+    animation:reveal-in .8s cubic-bezier(.2,.7,.2,1) both;
+    animation-delay:var(--reveal-delay, 0ms);
+  }
+  @keyframes reveal-in{
+    from{ opacity:0; translate:0 var(--reveal-from, 32px); }
+    to{ opacity:1; translate:0 0; }
+  }
+
+  @media (max-width: 1100px){
+    .steps{ grid-template-columns:repeat(2,1fr); }
+  }
   @media (max-width: 900px){
-    .hero-grid{ grid-template-columns:1fr; aspect-ratio:auto; }
-    .hero-copy{ margin:0; max-width:none; padding:20px 24px; }
-    .hero-copy h1{ font-size:40px; }
-    .nav-links{ display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--line); padding:20px 32px; gap:18px; z-index:40; }
+    :root{ --header-h:68px; }
+    section{ padding:64px 0; }
+    .nav{ padding:10px 20px; gap:12px; }
+    .brand img{ height:48px; }
+    .nav-links{
+      display:none; flex-direction:column; align-items:stretch; gap:0;
+      position:absolute; top:100%; left:0; right:0; z-index:40;
+      background:var(--cream); border-bottom:1px solid var(--line); padding:4px 20px 12px;
+      box-shadow:0 12px 24px rgba(16,27,61,0.08);
+    }
+    .nav-links a{ padding:12px 0; font-size:16px; border-bottom:1px solid var(--line); }
+    .nav-links a:last-child{ border-bottom:none; }
     .nav-links.open{ display:flex; }
-    .menu-toggle{ display:block; }
-    .brand{ flex-direction:column; align-items:flex-start; gap:4px; }
-    .nav-cta .btn{ padding:12px 18px; font-size:14px; }
-    .services-grid, .steps, .pricing-grid, .loc-grid{ grid-template-columns:1fr; }
+    .menu-toggle{ display:inline-flex; }
+    .nav-cta{ gap:6px; }
+    .nav-cta .btn{ padding:11px 16px; font-size:14px; }
+    .hero{ --hero-h:max(620px, calc(100svh - var(--header-h))); }
+    .hero-stage{ align-items:flex-end; }
+    .hero-stage::before{ background:linear-gradient(180deg, rgba(1,9,8,0) 28%, rgba(1,9,8,0.85) 52%, var(--hero-bg) 66%); }
+    .hero-visual{ right:auto; left:50%; height:88%; transform:translateX(-53%); }
+    .hero-copy{ padding:0 20px 40px; }
+    .hero-wordmark{ margin-bottom:22px; }
+    .hero-wordmark svg{ width:min(86vw, 360px); }
+    .hero-copy p{ font-size:17px; margin-bottom:28px; }
+    .services-grid, .pricing-grid, .loc-grid{ grid-template-columns:1fr; }
     .booking-grid{ grid-template-columns:1fr; gap:36px; }
     .form-grid{ grid-template-columns:1fr; }
     .form-group.full{ grid-column:auto; }
     .footer-grid{ grid-template-columns:1fr 1fr; }
     .wrap{ padding:0 20px; }
-    .lightbox-nav{ display:none; }
+    .lightbox{ padding:16px; }
+    .lightbox img{ max-width:100%; max-height:70vh; }
+    .lightbox-close{ top:12px; right:12px; }
+    .lightbox-nav{ top:auto; bottom:20px; transform:none; width:44px; height:44px; font-size:32px; }
+    .lightbox-prev{ left:16px; }
+    .lightbox-next{ right:16px; }
+    .lightbox-caption{ bottom:76px; width:max-content; max-width:calc(100% - 32px); font-size:14px; padding:8px 14px; }
   }
-  
+  @media (max-width: 560px){
+    .steps{ grid-template-columns:1fr; }
+    .section-head h2, .booking-copy h2{ font-size:30px; }
+    .hero-actions{ gap:12px; }
+    .hero-actions .btn{ flex:1 1 auto; padding:14px 18px; }
+    .booking-form-card{ padding:28px 20px; }
+    .footer-grid{ grid-template-columns:1fr; gap:32px; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .hero{ height:auto; }
+    .hero-stage{ position:relative; top:auto; }
+    html{ scroll-behavior:auto; }
+    *, *::before, *::after{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; }
+  }
 </style>
 <script type="application/ld+json">
 {
@@ -371,15 +513,12 @@ display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:
 
 <a href="#main" class="skip-link">Skip to content</a>
 
-<style>.skip-link{position:absolute;top:-100%;left:16px;background:var(--navy);color:var(--white);padding:12px 24px;border-radius:0 0 8px 8px;font-weight:600;z-index:100;transition:top .2s;}.skip-link:focus{top:0;}</style>
-
 <header>
   <div class="nav">
     <a href="#" class="brand">
-      <img src="images/logo.png" alt="Epitome Dry Cleaners logo" width="400" height="232">
-      <div class="tag">For Gentility &amp; Convenience</div>
+      <img src="images/logo.png" alt="Epitome Dry Cleaners logo" width="315" height="184">
     </a>
-    <nav class="nav-links">
+    <nav class="nav-links" id="nav-links" aria-label="Main">
       <a href="#services">Services</a>
       <a href="#how-it-works">How it works</a>
       <a href="#pricing">Pricing</a>
@@ -387,107 +526,104 @@ display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:
     </nav>
     <div class="nav-cta">
       <a href="#book" class="btn btn-primary">Book pickup</a>
-      <button class="menu-toggle" aria-label="Menu">☰</button>
+      <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+        <svg class="icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
     </div>
   </div>
 </header>
 
 <main id="main">
 <section class="hero">
-  <div class="hero-grid">
-    <div class="hero-copy">
-      <span class="eyebrow">Same-day dry cleaning</span>
-      <h1>Your clothes, professionally cared for.</h1>
-      <p>Fast pickup and delivery, eco-friendly solvents, and a 48-hour turnaround. No dry cleaning counter required.</p>
-      <div class="hero-actions">
-        <a href="#book" class="btn btn-primary">Schedule a pickup</a>
-        <a href="#pricing" class="btn btn-outline">See pricing</a>
-      </div>
-      <div class="hero-contact">
-        <a href="https://wa.me/256789015327" target="_blank" rel="noopener">
-          <span class="whatsapp-icon"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.522 5.858L.057 23.988l6.247-1.638A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.82c-1.95 0-3.84-.524-5.49-1.514l-.393-.233-3.89 1.018 1.04-3.788-.257-.408A9.78 9.78 0 012.18 12c0-5.42 4.4-9.82 9.82-9.82S21.82 6.58 21.82 12s-4.4 9.82-9.82 9.82z"/></svg></span>
-          WhatsApp: +256 789 015327
-        </a>
-        <a href="tel:+256756527277">
-          <span class="icon">📞</span> Mobile: +256 756 527277
-        </a>
+  <div class="hero-stage">
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-hanger">
+        <div class="suit-turn">
+          <img class="suit-front" src="images/hero-suit.jpg" alt="" width="800" height="1200" fetchpriority="high">
+          <img class="suit-back" src="images/hero-suit-back.jpg" alt="" width="800" height="1200">
+          <div class="suit-shade"></div>
+        </div>
       </div>
     </div>
-    <div class="hero-visual">
-      <span class="est-badge">Est. 2024</span>
-      <div class="hero-photos">
-        <figure>
-          <img src="images/hero-suit.jpg" alt="Freshly pressed suit on a hanger" width="800" height="1200" fetchpriority="high">
-        </figure>
-        <figure>
-          <img src="images/hero-bags.jpg" alt="Packaged garments ready for delivery" width="800" height="1200">
-        </figure>
+    <div class="hero-copy">
+      <div class="hero-wordmark reveal">
+        <h1 class="visually-hidden">Epitome Dry Cleaners</h1>
+        <svg viewBox="12 14 286 142" aria-hidden="true" focusable="false">
+          <g font-family="Poppins, 'DM Sans', sans-serif" fill="#FFFFFF">
+            <text x="11" y="97" font-size="63.1" font-weight="500" letter-spacing="0.7">Epit</text>
+            <text x="198" y="97" font-size="63.1" font-weight="500" letter-spacing="-5.6">me</text>
+          </g>
+          <g transform="translate(118 8)">
+            <circle cx="46" cy="55.5" r="34.5" fill="#fff"/>
+            <clipPath id="eo-clip"><circle cx="46" cy="55" r="26.5"/></clipPath>
+            <g clip-path="url(#eo-clip)">
+              <path fill="#050446" d="M19.5 55C19.5 52 24 50.5 29 51.5C35 53 40 58.5 47 62C53 65 60 65.5 65 64.5C64 70 60 77 52 80C44 82 34 81 27 76C22 72 19.5 63 19.5 55Z"/>
+            </g>
+            <circle cx="54" cy="50" r="2.9" fill="#2F6BE5"/>
+            <circle cx="47.2" cy="54" r="1.9" fill="#2F6BE5"/>
+            <circle cx="52" cy="57" r="0.8" fill="#9DB5EE"/>
+            <path fill="#2F6BE5" d="M64 46L65.6 54.2L70.8 50.6L70.2 58C69.6 64 67.2 69 63 73L64.4 66.2L62.6 63L57 60.6L62.2 58Z"/>
+            <path d="M34.7 26.1A31.5 31.5 0 1 0 57.3 26.1" fill="none" stroke="#E70B1F" stroke-width="7" stroke-linecap="round"/>
+            <path d="M45.5 13.5V37.5" stroke="#E70B1F" stroke-width="7" stroke-linecap="round"/>
+          </g>
+          <rect x="15" y="113" width="280" height="39" fill="#093C91"/>
+          <text x="158.4" y="141" text-anchor="middle" font-family="Poppins, 'DM Sans', sans-serif" font-size="24.4" font-weight="600" letter-spacing="6.7" fill="#fff">DRY CLEANERS</text>
+        </svg>
+      </div>
+      <p class="reveal">Fast pickup and delivery, eco-friendly solvents, and a 48-hour turnaround. No dry cleaning counter required.</p>
+      <div class="hero-actions reveal">
+        <a href="#book" class="btn btn-primary">Schedule a pickup</a>
+        <a href="#pricing" class="btn btn-outline">See pricing</a>
       </div>
     </div>
   </div>
 </section>
 
-        <div class="marquee-band" role="link" tabindex="0" onclick="window.open('https://wa.me/256789015327','_blank')" onkeydown="if(event.key==='Enter')window.open('https://wa.me/256789015327','_blank')">
-  <div class="marquee-track">
-    <span class="marquee-item"><img src="images/logo.png" alt="Epitome" width="400" height="232" loading="lazy"></span>
-    <span class="marquee-item"><span class="dot"></span> WhatsApp: +256 789 015327</span>
-    <span class="marquee-item"><span class="dot"></span> Mobile: +256 756 527277</span>
-    <span class="marquee-item"><span class="dot"></span> Fast Pickup &amp; Delivery</span>
-    <span class="marquee-item"><span class="dot"></span> Mon – Sat: 8am – 10pm | Sun: 9am – 8pm</span>
-    <span class="marquee-item"><span class="dot"></span> Najjera, Kampala</span>
-    <span class="marquee-item"><img src="images/logo.png" alt="Epitome" width="400" height="232" loading="lazy"></span>
-    <span class="marquee-item"><span class="dot"></span> WhatsApp: +256 789 015327</span>
-    <span class="marquee-item"><span class="dot"></span> Mobile: +256 756 527277</span>
-    <span class="marquee-item"><span class="dot"></span> Fast Pickup &amp; Delivery</span>
-    <span class="marquee-item"><span class="dot"></span> Mon – Sat: 8am – 10pm | Sun: 9am – 8pm</span>
-    <span class="marquee-item"><span class="dot"></span> Najjera, Kampala</span>
-  </div>
-</div>
-
 <section id="services">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">What we do</span>
-      <h2>Every garment, handled the right way</h2>
-      <p>From everyday shirts to delicate rugs, each item is inspected, cleaned, and finished by hand before it comes back to you.</p>
+      <span class="eyebrow reveal">What we do</span>
+      <h2 class="reveal">Every garment, handled the right way</h2>
+      <p class="reveal">From everyday shirts to delicate rugs, each item is inspected, cleaned, and finished by hand before it comes back to you.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card" onclick="openLightbox(0)" tabindex="0" role="button" onkeydown="if(event.key==='Enter')openLightbox(0)">
+      <div class="service-card reveal" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View photo: Dry cleaning">
         <div class="photo"><img src="images/hero-suit.jpg" alt="Dry cleaned suit on a wooden hanger" width="800" height="1200" loading="lazy"></div>
         <div class="body">
           <h3>Dry cleaning</h3>
           <p>Suits, dresses, and delicate fabrics cleaned with eco-friendly solvents and pressed to a crisp finish.</p>
         </div>
       </div>
-      <div class="service-card" onclick="openLightbox(1)" tabindex="0" role="button" onkeydown="if(event.key==='Enter')openLightbox(1)">
+      <div class="service-card reveal" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View photo: Wash, fold &amp; wardrobe care">
         <div class="photo"><img src="images/service-closet.jpg" alt="Neatly folded and organized wardrobe" width="800" height="600" loading="lazy"></div>
         <div class="body">
           <h3>Wash, fold &amp; wardrobe care</h3>
           <p>Everyday laundry washed, folded, and organized so it comes back ready to go straight into your closet.</p>
         </div>
       </div>
-      <div class="service-card" onclick="openLightbox(2)" tabindex="0" role="button" onkeydown="if(event.key==='Enter')openLightbox(2)">
+      <div class="service-card reveal" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View photo: Rug &amp; upholstery cleaning">
         <div class="photo"><img src="images/service-rug.jpg" alt="Steam cleaning of a patterned rug" width="800" height="600" loading="lazy"></div>
         <div class="body">
           <h3>Rug &amp; upholstery cleaning</h3>
           <p>Deep steam cleaning that lifts embedded dirt and stains from rugs, carpets, and upholstered furniture.</p>
         </div>
       </div>
-      <div class="service-card" onclick="openLightbox(3)" tabindex="0" role="button" onkeydown="if(event.key==='Enter')openLightbox(3)">
+      <div class="service-card reveal" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View photo: Stitching &amp; fabric repair">
         <div class="photo"><img src="images/stiching.webp" alt="Stitching and fabric repair" width="800" height="600" loading="lazy"></div>
         <div class="body">
           <h3>Stitching &amp; fabric repair</h3>
           <p>Custom tailoring, alterations, and expert fabric repair to keep your garments fitting perfectly.</p>
         </div>
       </div>
-      <div class="service-card" onclick="openLightbox(4)" tabindex="0" role="button" onkeydown="if(event.key==='Enter')openLightbox(4)">
+      <div class="service-card reveal" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View photo: Ironing &amp; pressing">
         <div class="photo"><img src="images/service-iron.jpg" alt="Professional pressing and ironing" width="800" height="600" loading="lazy"></div>
         <div class="body">
           <h3>Ironing &amp; pressing</h3>
           <p>Professional pressing that removes every crease, shirts, trousers, and formal wear looking sharp.</p>
         </div>
       </div>
-      <div class="service-card" onclick="openLightbox(5)" tabindex="0" role="button" onkeydown="if(event.key==='Enter')openLightbox(5)">
+      <div class="service-card reveal" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View photo: Shoe cleaning">
         <div class="photo"><img src="images/shoe-cleaning.webp" alt="Professional shoe cleaning" width="800" height="600" loading="lazy"></div>
         <div class="body">
           <h3>Shoe cleaning</h3>
@@ -499,52 +635,112 @@ display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:
 </section>
 
 
-<div class="lightbox" id="lightbox" role="dialog" aria-label="Image lightbox" aria-modal="true">
-  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close lightbox">&times;</button>
-  <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)" aria-label="Previous image">&#8249;</button>
-  <img id="lightbox-img" src="" alt="" role="img">
-  <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)" aria-label="Next image">&#8250;</button>
-  <div class="lightbox-caption" id="lightbox-caption"></div>
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Service photo" aria-modal="true">
+  <button class="lightbox-close" type="button" onclick="closeLightbox()" aria-label="Close">&times;</button>
+  <button class="lightbox-nav lightbox-prev" type="button" onclick="navigateLightbox(-1)" aria-label="Previous photo">&#8249;</button>
+  <img id="lightbox-img" alt="">
+  <button class="lightbox-nav lightbox-next" type="button" onclick="navigateLightbox(1)" aria-label="Next photo">&#8250;</button>
+  <div class="lightbox-caption" id="lightbox-caption" aria-live="polite"></div>
 </div>
 
 <section id="how-it-works" class="how">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">How it works</span>
-      <h2>Four steps, zero counter visits</h2>
+      <span class="eyebrow reveal">How it works</span>
+      <h2 class="reveal">Four steps, zero counter visits</h2>
     </div>
     <div class="steps">
-      <div class="step step-orange">
-        <div class="step-top">
-          <div class="num">01</div>
-          <span class="step-icon"><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 10h5v5H7z"/></svg></span>
+      <div class="step step-orange reveal">
+        <div class="step-header">
+          <span class="step-label">Step 01</span>
+          <span class="step-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 10h5v5H7z"/></svg></span>
         </div>
-        <h3>Schedule</h3>
-        <p>Book a pickup window online or send us a WhatsApp message with your address.</p>
+        <div class="step-body">
+          <h3>Schedule</h3>
+          <p>Book a pickup time online or send us a WhatsApp message with your address.</p>
+          <div class="step-progress">
+            <span>Progress</span>
+            <div class="step-progress-bar" style="--progress:25%"></div>
+            <span>25%</span>
+          </div>
+        </div>
+        <div class="step-footer">
+          <ul class="step-thumbs">
+            <li><img src="images/hero-suit.jpg" alt="" width="36" height="36" loading="lazy"></li>
+            <li><img src="images/shoe-cleaning.webp" alt="" width="36" height="36" loading="lazy"></li>
+            <li><a href="#book" class="step-add" aria-label="Book a pickup"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"/></svg></a></li>
+          </ul>
+          <span class="step-time">Under 1 min</span>
+        </div>
       </div>
-      <div class="step step-green">
-        <div class="step-top">
-          <div class="num">02</div>
-          <span class="step-icon">🚚</span>
+      <div class="step step-green reveal">
+        <div class="step-header">
+          <span class="step-label">Step 02</span>
+          <span class="step-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></span>
         </div>
-        <h3>We collect</h3>
-        <p>A rider picks up your items at the time you chose, no need to leave home or the office.</p>
+        <div class="step-body">
+          <h3>We collect</h3>
+          <p>A rider picks up your items at the time you chose, no need to leave home or the office.</p>
+          <div class="step-progress">
+            <span>Progress</span>
+            <div class="step-progress-bar" style="--progress:50%"></div>
+            <span>50%</span>
+          </div>
+        </div>
+        <div class="step-footer">
+          <ul class="step-thumbs">
+            <li><img src="images/hero-bags.jpg" alt="" width="36" height="36" loading="lazy"></li>
+            <li><img src="images/service-closet.jpg" alt="" width="36" height="36" loading="lazy"></li>
+            <li><a href="#book" class="step-add" aria-label="Book a pickup"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"/></svg></a></li>
+          </ul>
+          <span class="step-time">Your chosen time</span>
+        </div>
       </div>
-      <div class="step step-sky">
-        <div class="step-top">
-          <div class="num">03</div>
-          <span class="step-icon"><svg viewBox="0 0 24 24"><path d="M7.5 14.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm8-12a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM3.5 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm13.5 10a2.75 2.75 0 1 0 0 5.5 2.75 2.75 0 0 0 0-5.5z"/></svg></span>
+      <div class="step step-blue reveal">
+        <div class="step-header">
+          <span class="step-label">Step 03</span>
+          <span class="step-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.17 16.83c1.56 1.56 4.1 1.56 5.66 0 1.56-1.56 1.56-4.1 0-5.66l-5.66 5.66zM18 2.01L6 2c-1.11 0-2 .89-2 2v16c0 1.11.89 2 2 2h12c1.11 0 2-.89 2-2V4c0-1.11-.89-1.99-2-1.99zM10 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM7 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm5 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg></span>
         </div>
-        <h3>We clean</h3>
-        <p>Each item is sorted, cleaned, steamed and finished by hand within 48 hours.</p>
+        <div class="step-body">
+          <h3>We clean</h3>
+          <p>Each item is sorted, cleaned, steamed and finished by hand within 48 hours.</p>
+          <div class="step-progress">
+            <span>Progress</span>
+            <div class="step-progress-bar" style="--progress:75%"></div>
+            <span>75%</span>
+          </div>
+        </div>
+        <div class="step-footer">
+          <ul class="step-thumbs">
+            <li><img src="images/service-iron.jpg" alt="" width="36" height="36" loading="lazy"></li>
+            <li><img src="images/stiching.webp" alt="" width="36" height="36" loading="lazy"></li>
+            <li><a href="#book" class="step-add" aria-label="Book a pickup"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"/></svg></a></li>
+          </ul>
+          <span class="step-time">Within 48 hrs</span>
+        </div>
       </div>
-      <div class="step step-navy">
-        <div class="step-top">
-          <div class="num">04</div>
-          <span class="step-icon">📦</span>
+      <div class="step step-red reveal">
+        <div class="step-header">
+          <span class="step-label">Step 04</span>
+          <span class="step-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span>
         </div>
-        <h3>We deliver</h3>
-        <p>Fresh, folded, and ready to wear, dropped back at your door.</p>
+        <div class="step-body">
+          <h3>We deliver</h3>
+          <p>Fresh, folded, and ready to wear, dropped back at your door.</p>
+          <div class="step-progress">
+            <span>Progress</span>
+            <div class="step-progress-bar" style="--progress:100%"></div>
+            <span>100%</span>
+          </div>
+        </div>
+        <div class="step-footer">
+          <ul class="step-thumbs">
+            <li><img src="images/service-closet.jpg" alt="" width="36" height="36" loading="lazy"></li>
+            <li><img src="images/hero-bags.jpg" alt="" width="36" height="36" loading="lazy"></li>
+            <li><a href="#book" class="step-add" aria-label="Book a pickup"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"/></svg></a></li>
+          </ul>
+          <span class="step-time">Pay on delivery</span>
+        </div>
       </div>
     </div>
   </div>
@@ -553,12 +749,12 @@ display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:
 <section id="pricing">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Pricing</span>
-      <h2>Simple plans, priced in Ugandan Shillings</h2>
-      <p>Pay per item, subscribe as a household, or set up a standing arrangement for your business.</p>
+      <span class="eyebrow reveal">Pricing</span>
+      <h2 class="reveal">Simple plans, priced in Ugandan Shillings</h2>
+      <p class="reveal">Pay as you go by weight or per item, subscribe as a household, or set up a standing arrangement for your business.</p>
     </div>
     <div class="pricing-grid">
-      <div class="plan">
+      <div class="plan reveal">
         <h3>Pay-as-you-go</h3>
         <p class="plan-note">For occasional cleaning, priced per kg.</p>
         <div class="price">7,000 <span>UGX/kg</span></div>
@@ -570,7 +766,7 @@ display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:
         </ul>
         <a href="tel:+256756527277" class="btn btn-outline">Call to order</a>
       </div>
-      <div class="plan featured">
+      <div class="plan featured reveal">
         <span class="ribbon">Most popular</span>
         <h3>Household plan</h3>
         <p class="plan-note">Best for families with regular laundry and dry cleaning.</p>
@@ -582,9 +778,9 @@ display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:
           <li>Fast pickup &amp; delivery</li>
           <li>48-hour turnaround</li>
         </ul>
-        <a href="https://wa.me/256789015327" target="_blank" rel="noopener" class="btn btn-whatsapp">Subscribe on WhatsApp</a>
+        <a href="https://wa.me/256789015327" target="_blank" rel="noopener" class="btn btn-light">Subscribe on WhatsApp</a>
       </div>
-      <div class="plan">
+      <div class="plan reveal">
         <h3>Business plan</h3>
         <p class="plan-note">For offices, hotels, and restaurants with ongoing volume.</p>
         <div class="price">Custom <span>pricing</span></div>
@@ -599,9 +795,10 @@ display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:
     </div>
 
     <div class="price-table">
-      <table>
+      <h3 class="reveal">Per-item prices</h3>
+      <table class="reveal">
         <thead>
-          <tr><th>Item</th><th style="text-align:right;">Price</th></tr>
+          <tr><th>Item</th><th class="amount">Price</th></tr>
         </thead>
         <tbody>
           <tr><td>Shirt / blouse</td><td class="amount">4,000 UGX</td></tr>
@@ -619,37 +816,38 @@ display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:
 <section id="locations" class="locations">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Locations</span>
-      <h2>Pickup &amp; drop-off points</h2>
-      <p>No branch nearby? We still collect from your door, just book a pickup.</p>
+      <span class="eyebrow reveal">Locations</span>
+      <h2 class="reveal">Visit us in Najjera</h2>
+      <p class="reveal">No branch nearby? We still collect from your door, just book a pickup.</p>
     </div>
     <div class="loc-grid loc-grid-two">
-      <div class="loc-card">
+      <div class="loc-card reveal">
         <h3>Najjera</h3>
         <p>Plot 285 Najjera 1, Busibante Rd, Shop No. C4</p>
         <p>Mon – Sat: 8:00am – 10:00pm</p>
         <p>Sunday: 9:00am – 8:00pm</p>
         <div class="loc-links">
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Epitome+Dry+Cleaners%2C+Plot+285+Najjera+1%2C+Busibante+Rd%2C+Kampala" target="_blank" rel="noopener">Get directions</a>
           <a href="https://wa.me/256789015327" target="_blank" rel="noopener">WhatsApp</a>
           <a href="tel:+256756527277">Call</a>
         </div>
       </div>
-      <div class="loc-card">
+      <div class="loc-card reveal">
         <h3>Contact us</h3>
         <p>Reach us directly on either line below.</p>
-        <div style="margin-top:18px; display:flex; flex-direction:column; gap:14px;">
-          <a href="https://wa.me/256789015327" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:12px;">
-            <span class="whatsapp-icon whatsapp-icon-sm"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.522 5.858L.057 23.988l6.247-1.638A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.82c-1.95 0-3.84-.524-5.49-1.514l-.393-.233-3.89 1.018 1.04-3.788-.257-.408A9.78 9.78 0 012.18 12c0-5.42 4.4-9.82 9.82-9.82S21.82 6.58 21.82 12s-4.4 9.82-9.82 9.82z"/></svg></span>
+        <div class="contact-list">
+          <a href="https://wa.me/256789015327" target="_blank" rel="noopener">
+            <span class="contact-icon whatsapp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.522 5.858L.057 23.988l6.247-1.638A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.82c-1.95 0-3.84-.524-5.49-1.514l-.393-.233-3.89 1.018 1.04-3.788-.257-.408A9.78 9.78 0 012.18 12c0-5.42 4.4-9.82 9.82-9.82S21.82 6.58 21.82 12s-4.4 9.82-9.82 9.82z"/></svg></span>
             <span>
-              <span style="display:block; font-size:12px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:var(--gray);">WhatsApp</span>
-              <span style="display:block; font-size:16px; font-weight:700; color:var(--navy);">+256 789 015327</span>
+              <span class="label">WhatsApp</span>
+              <span class="value">+256 789 015327</span>
             </span>
           </a>
-          <a href="tel:+256756527277" style="display:flex; align-items:center; gap:12px;">
-            <span class="icon" style="width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--cream);border:1px solid var(--line);font-size:16px;">📞</span>
+          <a href="tel:+256756527277">
+            <span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg></span>
             <span>
-              <span style="display:block; font-size:12px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:var(--gray);">Mobile / Call</span>
-              <span style="display:block; font-size:16px; font-weight:700; color:var(--navy);">+256 756 527277</span>
+              <span class="label">Mobile / Call</span>
+              <span class="value">+256 756 527277</span>
             </span>
           </a>
         </div>
@@ -662,40 +860,40 @@ display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:
   <div class="wrap">
     <div class="booking-grid">
       <div class="booking-copy">
-        <span class="eyebrow">Book a pickup</span>
-        <h2>Schedule your collection in seconds</h2>
-        <p>Fill in the form and we'll confirm your pickup via WhatsApp. No account needed, no counter visit required.</p>
+        <span class="eyebrow reveal">Book a pickup</span>
+        <h2 class="reveal">Schedule your collection in seconds</h2>
+        <p class="reveal">Fill in the form and we'll confirm your pickup via WhatsApp. No account needed, no counter visit required.</p>
         <div class="booking-perks">
-          <div class="booking-perk">
-            <span class="perk-icon">🚚</span>
+          <div class="booking-perk reveal">
+            <span class="perk-icon" aria-hidden="true">🚚</span>
             <span>Fast pickup &amp; delivery across Kampala</span>
           </div>
-          <div class="booking-perk">
-            <span class="perk-icon">⏱️</span>
+          <div class="booking-perk reveal">
+            <span class="perk-icon" aria-hidden="true">⏱️</span>
             <span>48-hour turnaround on all garments</span>
           </div>
-          <div class="booking-perk">
-            <span class="perk-icon">💳</span>
+          <div class="booking-perk reveal">
+            <span class="perk-icon" aria-hidden="true">💳</span>
             <span>Pay on delivery, no upfront payment</span>
           </div>
-          <div class="booking-perk">
-            <span class="perk-icon">🌿</span>
+          <div class="booking-perk reveal">
+            <span class="perk-icon" aria-hidden="true">🌿</span>
             <span>Eco-friendly solvents, gentle on fabrics</span>
           </div>
         </div>
       </div>
-      <div class="booking-form-card">
+      <div class="booking-form-card reveal">
         <h3>Book a pickup</h3>
         <form id="booking-form" class="form-grid" onsubmit="submitBooking(event)">
           <div class="form-group">
             <label for="b-name">Full name</label>
-            <input type="text" id="b-name" name="name" placeholder="John Doe" required>
+            <input type="text" id="b-name" name="name" placeholder="John Doe" autocomplete="name" required>
           </div>
           <div class="form-group">
             <label for="b-phone">Phone number</label>
-            <input type="tel" id="b-phone" name="phone" placeholder="+256 7XX XXX XXX" required>
+            <input type="tel" id="b-phone" name="phone" placeholder="+256 7XX XXX XXX" autocomplete="tel" required>
           </div>
-          <div class="form-group">
+          <div class="form-group full">
             <label for="b-service">Service</label>
             <select id="b-service" name="service" required>
               <option value="" disabled selected>Choose a service</option>
@@ -712,17 +910,22 @@ display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:
             <label for="b-date">Preferred pickup date</label>
             <input type="date" id="b-date" name="date" required>
           </div>
+          <div class="form-group">
+            <label for="b-time">Preferred pickup time</label>
+            <input type="time" id="b-time" name="time" min="08:00" max="22:00" required>
+          </div>
           <div class="form-group full">
             <label for="b-address">Pickup address</label>
-            <input type="text" id="b-address" name="address" placeholder="Plot, street, area" required>
+            <input type="text" id="b-address" name="address" placeholder="Plot, street, area" autocomplete="street-address" required>
           </div>
           <div class="form-group full">
             <label for="b-notes">Notes (optional)</label>
             <textarea id="b-notes" name="notes" placeholder="Number of items, special instructions, etc."></textarea>
           </div>
           <div class="form-submit">
-            <button type="submit" class="btn btn-whatsapp" style="width:100%;">Send booking via WhatsApp</button>
+            <button type="submit" class="btn btn-whatsapp">Send booking via WhatsApp</button>
           </div>
+          <p class="form-status" id="booking-status" role="status"></p>
         </form>
       </div>
     </div>
@@ -733,28 +936,14 @@ display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:
 <footer>
   <div class="wrap">
     <div class="footer-grid">
-      <div class="footer-brand">
+      <div class="footer-brand reveal">
         <a href="#" class="brand">
-          <img src="images/logo.png" alt="Epitome Dry Cleaners logo" width="400" height="232" loading="lazy" style="height:72px; background:var(--white); padding:10px 14px; border-radius:10px;">
-          <div class="tag" style="color:#9AA5C4; font-size:12px;">For Gentility &amp; Convenience</div>
+          <img src="images/logo.png" alt="Epitome Dry Cleaners logo" width="315" height="184" loading="lazy">
+          <div class="tag">For Gentility &amp; Convenience</div>
         </a>
         <p>Fast pickup and delivery dry cleaning, wash &amp; fold, and rug care, est. 2024.</p>
-        <div style="display:flex; gap:12px; margin-top:16px;">
-          <a href="#" target="_blank" rel="noopener" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'" aria-label="Facebook">
-            <svg width="16" height="16" fill="#C9D0E5" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
-          <a href="#" target="_blank" rel="noopener" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'" aria-label="Instagram">
-            <svg width="16" height="16" fill="#C9D0E5" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          </a>
-          <a href="#" target="_blank" rel="noopener" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'" aria-label="X (Twitter)">
-            <svg width="14" height="14" fill="#C9D0E5" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="#" target="_blank" rel="noopener" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'" aria-label="TikTok">
-            <svg width="14" height="14" fill="#C9D0E5" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-          </a>
-        </div>
       </div>
-      <div>
+      <div class="reveal">
         <h4>Explore</h4>
         <ul>
           <li><a href="#services">Services</a></li>
@@ -764,22 +953,22 @@ display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:
           <li><a href="#locations">Locations</a></li>
         </ul>
       </div>
-      <div>
+      <div class="reveal">
         <h4>Contact</h4>
         <ul>
-          <li><a href="https://wa.me/256789015327" target="_blank" rel="noopener">WhatsApp: +256 789 015327</a></li>
-          <li><a href="tel:+256756527277">Mobile: +256 756 527277</a></li>
+          <li><a href="https://wa.me/256789015327" target="_blank" rel="noopener">WhatsApp: <span class="nowrap">+256 789 015327</span></a></li>
+          <li><a href="tel:+256756527277">Mobile: <span class="nowrap">+256 756 527277</span></a></li>
         </ul>
       </div>
-      <div>
+      <div class="reveal">
         <h4>Hours</h4>
         <ul>
-          <li>Mon – Sat: 8:00am – 10:00pm</li>
-<li>Sunday: 9:00am – 8:00pm</li>
+          <li>Mon – Sat: <span class="nowrap">8:00am – 10:00pm</span></li>
+          <li>Sunday: <span class="nowrap">9:00am – 8:00pm</span></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
+    <div class="footer-bottom reveal">
       <span>© 2026 Epitome Dry Cleaners. All rights reserved.</span>
       <span>Est. 2024</span>
     </div>
@@ -787,6 +976,8 @@ display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:
 </footer>
 
 <script>
+var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 var galleryImages = [
   { src:'images/hero-suit.jpg', alt:'Dry cleaning' },
   { src:'images/service-closet.jpg', alt:'Wash, fold & wardrobe care' },
@@ -796,43 +987,66 @@ var galleryImages = [
   { src:'images/shoe-cleaning.webp', alt:'Shoe cleaning' }
 ];
 var currentSlide = 0;
+var lightbox = document.getElementById('lightbox');
+var lightboxReturnFocus = null;
 
-function openLightbox(index) {
+function showSlide(index) {
   currentSlide = index;
-  var lb = document.getElementById('lightbox');
   var img = document.getElementById('lightbox-img');
-  var cap = document.getElementById('lightbox-caption');
   img.src = galleryImages[index].src;
   img.alt = galleryImages[index].alt;
-  cap.textContent = galleryImages[index].alt;
-  lb.classList.add('active');
+  document.getElementById('lightbox-caption').textContent = galleryImages[index].alt;
+}
+
+function openLightbox(index) {
+  lightboxReturnFocus = document.activeElement;
+  showSlide(index);
+  lightbox.classList.add('active');
   document.body.style.overflow = 'hidden';
+  lightbox.querySelector('.lightbox-close').focus();
 }
 
 function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('active');
+  lightbox.classList.remove('active');
   document.body.style.overflow = '';
+  if (lightboxReturnFocus) lightboxReturnFocus.focus();
 }
 
 function navigateLightbox(dir) {
-  currentSlide = (currentSlide + dir + galleryImages.length) % galleryImages.length;
-  var img = document.getElementById('lightbox-img');
-  var cap = document.getElementById('lightbox-caption');
-  img.src = galleryImages[currentSlide].src;
-  img.alt = galleryImages[currentSlide].alt;
-  cap.textContent = galleryImages[currentSlide].alt;
+  showSlide((currentSlide + dir + galleryImages.length) % galleryImages.length);
 }
 
+document.querySelectorAll('.service-card').forEach(function(card, i) {
+  card.addEventListener('click', function() { openLightbox(i); });
+  card.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(i); }
+  });
+});
+
 document.addEventListener('keydown', function(e) {
-  var lb = document.getElementById('lightbox');
-  if (!lb.classList.contains('active')) return;
+  if (!lightbox.classList.contains('active')) return;
   if (e.key === 'Escape') closeLightbox();
   if (e.key === 'ArrowLeft') navigateLightbox(-1);
   if (e.key === 'ArrowRight') navigateLightbox(1);
+  if (e.key === 'Tab') {
+    var buttons = [].filter.call(lightbox.querySelectorAll('button'), function(b) { return b.offsetParent !== null; });
+    var first = buttons[0], last = buttons[buttons.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
 });
 
-document.getElementById('lightbox').addEventListener('click', function(e) {
+lightbox.addEventListener('click', function(e) {
   if (e.target === this) closeLightbox();
+});
+
+var touchStartX = null;
+lightbox.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+lightbox.addEventListener('touchend', function(e) {
+  if (touchStartX === null) return;
+  var dx = e.changedTouches[0].clientX - touchStartX;
+  if (Math.abs(dx) > 50) navigateLightbox(dx < 0 ? 1 : -1);
+  touchStartX = null;
 });
 
 function submitBooking(e) {
@@ -842,6 +1056,7 @@ function submitBooking(e) {
   var phone = f.phone.value.trim();
   var service = f.service.value;
   var date = f.date.value;
+  var time = f.time.value;
   var address = f.address.value.trim();
   var notes = f.notes.value.trim();
 
@@ -850,76 +1065,185 @@ function submitBooking(e) {
   msg += '*Phone:* ' + encodeURIComponent(phone) + '%0A';
   msg += '*Service:* ' + encodeURIComponent(service) + '%0A';
   msg += '*Pickup date:* ' + encodeURIComponent(date) + '%0A';
+  msg += '*Pickup time:* ' + encodeURIComponent(time) + '%0A';
   msg += '*Address:* ' + encodeURIComponent(address) + '%0A';
   if (notes) msg += '*Notes:* ' + encodeURIComponent(notes) + '%0A';
 
-  window.open('https://wa.me/256789015327?text=' + msg, '_blank');
+  var url = 'https://wa.me/256789015327?text=' + msg;
+  if (!window.open(url, '_blank')) window.location.href = url;
+  document.getElementById('booking-status').textContent = 'WhatsApp should now be open with your booking details. Press send there to confirm. If it did not open, message us on +256 789 015327.';
 }
 
 (function() {
   var dateInput = document.getElementById('b-date');
   if (dateInput) {
-    var today = new Date().toISOString().split('T')[0];
+    var now = new Date();
+    var today = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
     dateInput.setAttribute('min', today);
   }
 })();
 
-document.querySelector('.menu-toggle').addEventListener('click', function() {
-  document.querySelector('.nav-links').classList.toggle('open');
+var menuToggle = document.querySelector('.menu-toggle');
+var navLinks = document.getElementById('nav-links');
+
+function setMenu(open) {
+  navLinks.classList.toggle('open', open);
+  menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+
+menuToggle.addEventListener('click', function() {
+  setMenu(!navLinks.classList.contains('open'));
 });
 
-document.querySelectorAll('.nav-links a').forEach(function(el) {
-  el.addEventListener('click', function() {
-    document.querySelector('.nav-links').classList.remove('open');
-  });
+navLinks.querySelectorAll('a').forEach(function(el) {
+  el.addEventListener('click', function() { setMenu(false); });
 });
 
-document.querySelectorAll('nav a, .nav-cta a, .btn').forEach(function(el) {
-  el.addEventListener('click', function(e) {
-    var colors = ['#3452D0','#25D366','#F59E0B','#101B3D','#8FA3F0'];
-    for (var i = 0; i < 5; i++) {
-      var bubble = document.createElement('div');
-      bubble.className = 'click-bubble';
-      var size = Math.random() * 50 + 30;
-      bubble.style.width = size + 'px';
-      bubble.style.height = size + 'px';
-      bubble.style.left = (e.clientX - size / 2 + (Math.random() - 0.5) * 40) + 'px';
-      bubble.style.top = (e.clientY - size / 2 + (Math.random() - 0.5) * 40) + 'px';
-      bubble.style.background = colors[Math.floor(Math.random() * colors.length)];
-      document.body.appendChild(bubble);
-      (function(b) { setTimeout(function() { b.remove(); }, 1300); })(bubble);
-    }
-  });
-});
-
-(function() {
-  var band = document.querySelector('.marquee-band');
-  if (!band) return;
-  function spawnBubble() {
-    var b = document.createElement('div');
-    b.className = 'marquee-bubble';
-    var size = Math.random() * 20 + 8;
-    b.style.width = size + 'px';
-    b.style.height = size + 'px';
-    b.style.left = Math.random() * 100 + '%';
-    b.style.bottom = '0';
-    b.style.animationDuration = (Math.random() * 2 + 1.5) + 's';
-    band.appendChild(b);
-    setTimeout(function() { b.remove(); }, 4000);
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+    setMenu(false);
+    menuToggle.focus();
   }
-  setInterval(spawnBubble, 200);
+});
+
+document.addEventListener('click', function(e) {
+  if (navLinks.classList.contains('open') && !e.target.closest('.nav')) setMenu(false);
+});
+
+if (!reduceMotion) {
+  document.querySelectorAll('nav a, .nav-cta a, .btn').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      var colors = ['#3452D0','#25D366','#F59E0B','#101B3D','#8FA3F0'];
+      for (var i = 0; i < 5; i++) {
+        var bubble = document.createElement('div');
+        bubble.className = 'click-bubble';
+        var size = Math.random() * 50 + 30;
+        bubble.style.width = size + 'px';
+        bubble.style.height = size + 'px';
+        bubble.style.left = (e.clientX - size / 2 + (Math.random() - 0.5) * 40) + 'px';
+        bubble.style.top = (e.clientY - size / 2 + (Math.random() - 0.5) * 40) + 'px';
+        bubble.style.background = colors[Math.floor(Math.random() * colors.length)];
+        document.body.appendChild(bubble);
+        (function(b) { setTimeout(function() { b.remove(); }, 1300); })(bubble);
+      }
+    });
+  });
+}
+
+// Swing the suit like it has just been hung up; hovering the photo swings it again.
+(function() {
+  var hanger = document.querySelector('.hero-hanger');
+  if (!hanger || reduceMotion) return;
+  function swing() {
+    hanger.classList.remove('swinging');
+    void hanger.offsetWidth;
+    hanger.classList.add('swinging');
+  }
+  var img = hanger.querySelector('.suit-front');
+  if (img.complete) swing(); else img.addEventListener('load', swing);
+  hanger.addEventListener('animationend', function() { hanger.classList.remove('swinging'); });
+  document.querySelector('.hero-visual').addEventListener('mouseenter', function() {
+    if (!hanger.classList.contains('swinging')) swing();
+  });
 })();
 
+// Turn the suit on its hook while the hero is pinned: one full turn (front, back, front)
+// across the pinned stretch. A spring makes it lag and overshoot like real fabric.
+(function() {
+  var hero = document.querySelector('.hero');
+  var stage = document.querySelector('.hero-stage');
+  var turn = document.querySelector('.suit-turn');
+  if (!hero || !stage || !turn || reduceMotion) return;
+  var shade = turn.querySelector('.suit-shade');
+  var angle, velocity = 0, running = false;
+
+  function targetAngle() {
+    var range = hero.offsetHeight - stage.offsetHeight;
+    if (range <= 0) return 0;
+    var travelled = parseFloat(getComputedStyle(stage).top) - hero.getBoundingClientRect().top;
+    return Math.min(Math.max(travelled / range, 0), 1) * 360;
+  }
+
+  function draw() {
+    var c = Math.cos(angle * Math.PI / 180);
+    var width = Math.max(Math.abs(c), 0.16);
+    var tilt = Math.max(-6, Math.min(6, velocity * 0.4));
+    turn.style.transform = 'rotate(' + tilt.toFixed(2) + 'deg) scaleX(' + width.toFixed(3) + ')';
+    turn.classList.toggle('show-back', c < 0);
+    shade.style.opacity = ((1 - Math.abs(c)) * 0.55).toFixed(3);
+  }
+
+  function step() {
+    var target = targetAngle();
+    velocity = (velocity + (target - angle) * 0.08) * 0.8;
+    angle += velocity;
+    draw();
+    if (Math.abs(target - angle) > 0.05 || Math.abs(velocity) > 0.05) requestAnimationFrame(step);
+    else running = false;
+  }
+
+  angle = targetAngle();
+  draw();
+  window.addEventListener('scroll', function() {
+    if (!running) { running = true; requestAnimationFrame(step); }
+  }, { passive: true });
+})();
+
+// Highlight the steps one after another each time the section comes into view
+// (about 4s per pass, then it rests until the section is scrolled back into view).
 (function() {
   var steps = document.querySelectorAll('.step');
-  if (!steps.length) return;
-  var current = 0;
-  setInterval(function() {
-    steps.forEach(function(s) { s.classList.remove('highlight'); });
-    steps[current].classList.add('highlight');
-    current = (current + 1) % steps.length;
-  }, 1800);
+  if (!steps.length || reduceMotion || !('IntersectionObserver' in window)) return;
+  var running = false;
+  function walk() {
+    running = true;
+    steps.forEach(function(step, i) {
+      setTimeout(function() {
+        steps.forEach(function(s) { s.classList.remove('highlight'); });
+        step.classList.add('highlight');
+      }, 500 + i * 1000);
+    });
+    setTimeout(function() {
+      steps.forEach(function(s) { s.classList.remove('highlight'); });
+      running = false;
+    }, 500 + steps.length * 1000);
+  }
+  new IntersectionObserver(function(entries) {
+    if (entries[0].intersectionRatio >= 0.4 && !running) walk();
+  }, { threshold: 0.4 }).observe(document.querySelector('.steps'));
 })();
+
+// Reveal content as it scrolls into view, and again every time it comes back.
+(function() {
+  if (!document.documentElement.classList.contains('js-reveal')) return;
+  var items = document.querySelectorAll('.reveal');
+  items.forEach(function(el) {
+    var group = [].filter.call(el.parentNode.children, function(c) { return c.classList.contains('reveal'); });
+    el.style.setProperty('--reveal-delay', Math.min(group.indexOf(el), 5) * 90 + 'ms');
+  });
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      var el = entry.target;
+      if (entry.isIntersecting) {
+        if (el.classList.contains('is-visible')) return;
+        // Coming back down from above? Slide in from the top instead.
+        el.style.setProperty('--reveal-from', entry.boundingClientRect.top < 0 ? '-32px' : '32px');
+        el.classList.add('is-visible');
+      } else {
+        el.classList.remove('is-visible');
+      }
+    });
+  }, { rootMargin: '0px 0px -6% 0px' });
+  items.forEach(function(el) { observer.observe(el); });
+})();
+
+// On touch screens, tapping a plan lifts it (a mouse gets this from :hover).
+document.addEventListener('touchstart', function(e) {
+  var tapped = e.target.closest('.plan');
+  document.querySelectorAll('.plan').forEach(function(plan) {
+    plan.classList.toggle('is-raised', plan === tapped);
+  });
+}, { passive: true });
 </script>
 
 </body>

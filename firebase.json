@@ -6,6 +6,9 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      { "source": "/epitome-drycleaners.html", "destination": "/", "type": 301 }
+    ],
     "headers": [
       {
         "source": "sitemap.xml",
